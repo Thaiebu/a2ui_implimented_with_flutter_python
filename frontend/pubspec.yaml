@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   web_socket_channel: ^3.0.3
   http: ^1.6.0
+  genui: ^0.10.4
+  genui_a2a: ^0.10.1
+  a2ui_core: ^0.1.1
 
 dev_dependencies:
   flutter_test:

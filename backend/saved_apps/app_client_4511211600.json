@@ -1,0 +1,1595 @@
+{
+  "id": "app_client_4511211600",
+  "name": "Grandmaster Chess",
+  "updated_at": "2026-10-26T10:58:50.188586",
+  "component_count": 133,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "game_info_banner",
+          "opponent_card",
+          "board_card",
+          "player_card",
+          "move_control_card",
+          "match_details_row",
+          "settings_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_row",
+          "header_sub_row"
+        ]
+      }
+    },
+    {
+      "id": "header_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "app_title",
+          "header_spacer",
+          "new_game_btn",
+          "flip_board_btn"
+        ]
+      }
+    },
+    {
+      "id": "app_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\u265f\ufe0f Grandmaster Chess"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "header_spacer",
+      "component": "Column",
+      "children": {
+        "explicitList": []
+      }
+    },
+    {
+      "id": "new_game_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "New Match"
+      },
+      "action": {
+        "name": "reset_game",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "flip_board_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\ud83d\udd04 Flip Board"
+      },
+      "action": {
+        "name": "flip_perspective",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "header_sub_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "game_mode_picker",
+          "time_control_picker"
+        ]
+      }
+    },
+    {
+      "id": "game_mode_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Game Mode"
+      },
+      "value": {
+        "path": "/game/mode"
+      },
+      "options": [
+        {
+          "label": "\ud83e\udd16 vs Stockfish AI",
+          "value": "ai"
+        },
+        {
+          "label": "\ud83d\udc65 Pass & Play Local",
+          "value": "local"
+        },
+        {
+          "label": "\ud83e\udde9 Puzzle Arena",
+          "value": "puzzle"
+        }
+      ]
+    },
+    {
+      "id": "time_control_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Time Control"
+      },
+      "value": {
+        "path": "/game/time_control"
+      },
+      "options": [
+        {
+          "label": "\u26a1 Blitz (3+2)",
+          "value": "blitz"
+        },
+        {
+          "label": "\u23f1\ufe0f Rapid (10+0)",
+          "value": "rapid"
+        },
+        {
+          "label": "\u23f3 Classical (30+0)",
+          "value": "classical"
+        },
+        {
+          "label": "\u267e\ufe0f Unlimited",
+          "value": "unlimited"
+        }
+      ]
+    },
+    {
+      "id": "game_info_banner",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "banner_row"
+        ]
+      }
+    },
+    {
+      "id": "banner_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "turn_status_text",
+          "eval_score_text",
+          "check_status_text"
+        ]
+      }
+    },
+    {
+      "id": "turn_status_text",
+      "component": "Text",
+      "text": {
+        "literalString": "Turn: White to Move (Move 14)"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "eval_score_text",
+      "component": "Text",
+      "text": {
+        "literalString": "Advantage: +1.4 (White leading)"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "check_status_text",
+      "component": "Text",
+      "text": {
+        "literalString": "Status: Active Play"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "opponent_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "opponent_row"
+        ]
+      }
+    },
+    {
+      "id": "opponent_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "opponent_info_col",
+          "opponent_timer_text"
+        ]
+      }
+    },
+    {
+      "id": "opponent_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "opponent_name",
+          "opponent_captured"
+        ]
+      }
+    },
+    {
+      "id": "opponent_name",
+      "component": "Text",
+      "text": {
+        "literalString": "\u265a Stockfish Bot (Elo 1850) - Black"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "opponent_captured",
+      "component": "Text",
+      "text": {
+        "literalString": "Captured: \u2659 \u2659 \u2658 (Material: +0)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "opponent_timer_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\u23f1\ufe0f 08:44"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "board_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "board_rank_8",
+          "board_rank_7",
+          "board_rank_6",
+          "board_rank_5",
+          "board_rank_4",
+          "board_rank_3",
+          "board_rank_2",
+          "board_rank_1",
+          "board_files_row"
+        ]
+      }
+    },
+    {
+      "id": "board_rank_8",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a8",
+          "sq_b8",
+          "sq_c8",
+          "sq_d8",
+          "sq_e8",
+          "sq_f8",
+          "sq_g8",
+          "sq_h8"
+        ]
+      }
+    },
+    {
+      "id": "sq_a8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265c a8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a8"
+      }
+    },
+    {
+      "id": "sq_b8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b8"
+      }
+    },
+    {
+      "id": "sq_c8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265d c8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c8"
+      }
+    },
+    {
+      "id": "sq_d8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265b d8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d8"
+      }
+    },
+    {
+      "id": "sq_e8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265a e8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e8"
+      }
+    },
+    {
+      "id": "sq_f8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 f8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f8"
+      }
+    },
+    {
+      "id": "sq_g8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g8"
+      }
+    },
+    {
+      "id": "sq_h8",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265c h8"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h8"
+      }
+    },
+    {
+      "id": "board_rank_7",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a7",
+          "sq_b7",
+          "sq_c7",
+          "sq_d7",
+          "sq_e7",
+          "sq_f7",
+          "sq_g7",
+          "sq_h7"
+        ]
+      }
+    },
+    {
+      "id": "sq_a7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f a7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a7"
+      }
+    },
+    {
+      "id": "sq_b7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f b7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b7"
+      }
+    },
+    {
+      "id": "sq_c7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f c7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c7"
+      }
+    },
+    {
+      "id": "sq_d7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 d7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d7"
+      }
+    },
+    {
+      "id": "sq_e7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265d e7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e7"
+      }
+    },
+    {
+      "id": "sq_f7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f f7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f7"
+      }
+    },
+    {
+      "id": "sq_g7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f g7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g7"
+      }
+    },
+    {
+      "id": "sq_h7",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f h7"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h7"
+      }
+    },
+    {
+      "id": "board_rank_6",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a6",
+          "sq_b6",
+          "sq_c6",
+          "sq_d6",
+          "sq_e6",
+          "sq_f6",
+          "sq_g6",
+          "sq_h6"
+        ]
+      }
+    },
+    {
+      "id": "sq_a6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 a6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a6"
+      }
+    },
+    {
+      "id": "sq_b6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b6"
+      }
+    },
+    {
+      "id": "sq_c6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265e c6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c6"
+      }
+    },
+    {
+      "id": "sq_d6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f d6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d6"
+      }
+    },
+    {
+      "id": "sq_e6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 e6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e6"
+      }
+    },
+    {
+      "id": "sq_f6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265e f6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f6"
+      }
+    },
+    {
+      "id": "sq_g6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g6"
+      }
+    },
+    {
+      "id": "sq_h6",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 h6"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h6"
+      }
+    },
+    {
+      "id": "board_rank_5",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a5",
+          "sq_b5",
+          "sq_c5",
+          "sq_d5",
+          "sq_e5",
+          "sq_f5",
+          "sq_g5",
+          "sq_h5"
+        ]
+      }
+    },
+    {
+      "id": "sq_a5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 a5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a5"
+      }
+    },
+    {
+      "id": "sq_b5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b5"
+      }
+    },
+    {
+      "id": "sq_c5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 c5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c5"
+      }
+    },
+    {
+      "id": "sq_d5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 d5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d5"
+      }
+    },
+    {
+      "id": "sq_e5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u265f e5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e5"
+      }
+    },
+    {
+      "id": "sq_f5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 f5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f5"
+      }
+    },
+    {
+      "id": "sq_g5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g5"
+      }
+    },
+    {
+      "id": "sq_h5",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 h5"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h5"
+      }
+    },
+    {
+      "id": "board_rank_4",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a4",
+          "sq_b4",
+          "sq_c4",
+          "sq_d4",
+          "sq_e4",
+          "sq_f4",
+          "sq_g4",
+          "sq_h4"
+        ]
+      }
+    },
+    {
+      "id": "sq_a4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 a4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a4"
+      }
+    },
+    {
+      "id": "sq_b4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b4"
+      }
+    },
+    {
+      "id": "sq_c4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 c4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c4"
+      }
+    },
+    {
+      "id": "sq_d4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 d4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d4"
+      }
+    },
+    {
+      "id": "sq_e4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 e4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e4"
+      }
+    },
+    {
+      "id": "sq_f4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 f4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f4"
+      }
+    },
+    {
+      "id": "sq_g4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g4"
+      }
+    },
+    {
+      "id": "sq_h4",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 h4"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h4"
+      }
+    },
+    {
+      "id": "board_rank_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a3",
+          "sq_b3",
+          "sq_c3",
+          "sq_d3",
+          "sq_e3",
+          "sq_f3",
+          "sq_g3",
+          "sq_h3"
+        ]
+      }
+    },
+    {
+      "id": "sq_a3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 a3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a3"
+      }
+    },
+    {
+      "id": "sq_b3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b3"
+      }
+    },
+    {
+      "id": "sq_c3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2658 c3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c3"
+      }
+    },
+    {
+      "id": "sq_d3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 d3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d3"
+      }
+    },
+    {
+      "id": "sq_e3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 e3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e3"
+      }
+    },
+    {
+      "id": "sq_f3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2658 f3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f3"
+      }
+    },
+    {
+      "id": "sq_g3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g3"
+      }
+    },
+    {
+      "id": "sq_h3",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 h3"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h3"
+      }
+    },
+    {
+      "id": "board_rank_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a2",
+          "sq_b2",
+          "sq_c2",
+          "sq_d2",
+          "sq_e2",
+          "sq_f2",
+          "sq_g2",
+          "sq_h2"
+        ]
+      }
+    },
+    {
+      "id": "sq_a2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 a2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a2"
+      }
+    },
+    {
+      "id": "sq_b2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 b2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b2"
+      }
+    },
+    {
+      "id": "sq_c2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 c2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c2"
+      }
+    },
+    {
+      "id": "sq_d2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 d2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d2"
+      }
+    },
+    {
+      "id": "sq_e2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 e2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e2"
+      }
+    },
+    {
+      "id": "sq_f2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 f2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f2"
+      }
+    },
+    {
+      "id": "sq_g2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 g2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g2"
+      }
+    },
+    {
+      "id": "sq_h2",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2659 h2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h2"
+      }
+    },
+    {
+      "id": "board_rank_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "sq_a1",
+          "sq_b1",
+          "sq_c1",
+          "sq_d1",
+          "sq_e1",
+          "sq_f1",
+          "sq_g1",
+          "sq_h1"
+        ]
+      }
+    },
+    {
+      "id": "sq_a1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2656 a1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/a1"
+      }
+    },
+    {
+      "id": "sq_b1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 b1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/b1"
+      }
+    },
+    {
+      "id": "sq_c1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2657 c1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/c1"
+      }
+    },
+    {
+      "id": "sq_d1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2655 d1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/d1"
+      }
+    },
+    {
+      "id": "sq_e1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2654 e1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/e1"
+      }
+    },
+    {
+      "id": "sq_f1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2657 e2"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/f1"
+      }
+    },
+    {
+      "id": "sq_g1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u00b7 g1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/g1"
+      }
+    },
+    {
+      "id": "sq_h1",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2656 h1"
+      },
+      "action": {
+        "name": "select_square",
+        "contextPath": "/board/h1"
+      }
+    },
+    {
+      "id": "board_files_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "lbl_a",
+          "lbl_b",
+          "lbl_c",
+          "lbl_d",
+          "lbl_e",
+          "lbl_f",
+          "lbl_g",
+          "lbl_h"
+        ]
+      }
+    },
+    {
+      "id": "lbl_a",
+      "component": "Text",
+      "text": {
+        "literalString": "  A  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_b",
+      "component": "Text",
+      "text": {
+        "literalString": "  B  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_c",
+      "component": "Text",
+      "text": {
+        "literalString": "  C  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_d",
+      "component": "Text",
+      "text": {
+        "literalString": "  D  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_e",
+      "component": "Text",
+      "text": {
+        "literalString": "  E  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_f",
+      "component": "Text",
+      "text": {
+        "literalString": "  F  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_g",
+      "component": "Text",
+      "text": {
+        "literalString": "  G  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "lbl_h",
+      "component": "Text",
+      "text": {
+        "literalString": "  H  "
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "player_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "player_row"
+        ]
+      }
+    },
+    {
+      "id": "player_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "player_info_col",
+          "player_timer_text"
+        ]
+      }
+    },
+    {
+      "id": "player_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "player_name",
+          "player_captured"
+        ]
+      }
+    },
+    {
+      "id": "player_name",
+      "component": "Text",
+      "text": {
+        "literalString": "\u2654 You (White) - Turn Active"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "player_captured",
+      "component": "Text",
+      "text": {
+        "literalString": "Captured: \u265f \u265f \u265d (Material: +1)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "player_timer_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\u23f1\ufe0f 09:18"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "move_control_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "move_input_row",
+          "in_game_actions_row"
+        ]
+      }
+    },
+    {
+      "id": "move_input_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "notation_input",
+          "submit_move_btn"
+        ]
+      }
+    },
+    {
+      "id": "notation_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "Play Move (Algebraic or Coordinate)"
+      },
+      "value": {
+        "path": "/game/current_input"
+      },
+      "placeholder": "e.g. Bc4, O-O, or e2e4"
+    },
+    {
+      "id": "submit_move_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\u2713 Execute Move"
+      },
+      "action": {
+        "name": "execute_move",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "in_game_actions_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "hint_btn",
+          "undo_btn",
+          "draw_btn",
+          "resign_btn"
+        ]
+      }
+    },
+    {
+      "id": "hint_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\ud83d\udca1 Best Move Hint"
+      },
+      "action": {
+        "name": "request_hint",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "undo_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\u21a9 Takeback / Undo"
+      },
+      "action": {
+        "name": "undo_move",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "draw_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\ud83e\udd1d Offer Draw"
+      },
+      "action": {
+        "name": "offer_draw",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "resign_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\ud83c\udff3\ufe0f Resign"
+      },
+      "action": {
+        "name": "resign",
+        "contextPath": "/game"
+      }
+    },
+    {
+      "id": "match_details_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "pgn_card",
+          "analysis_summary_card"
+        ]
+      }
+    },
+    {
+      "id": "pgn_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "history_title",
+          "history_log_text"
+        ]
+      }
+    },
+    {
+      "id": "history_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udcdc Move History (PGN)"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "history_log_text",
+      "component": "Text",
+      "text": {
+        "literalString": "1. e4 e5\n2. Nf3 Nc6\n3. d4 exd4\n4. Nxd4 Nf6\n5. Nc3 Be7\n6. Be2 d6"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "analysis_summary_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "eval_title",
+          "eval_details_text",
+          "hint_display_text"
+        ]
+      }
+    },
+    {
+      "id": "eval_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udcca Live Engine Evaluation"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "eval_details_text",
+      "component": "Text",
+      "text": {
+        "literalString": "Depth: 18 ply | Evaluation: +1.42 (White)\nTop Line: 7. O-O O-O 8. Be3 Re8\nAccuracy: White 94.2% \u00b7 Black 89.1%"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "hint_display_text",
+      "component": "Text",
+      "text": {
+        "literalString": "Recommended: 7. O-O (Castles kingside to solidify king safety and connect rooks)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "settings_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "settings_title",
+          "settings_divider",
+          "ai_level_slider",
+          "settings_selectors_row"
+        ]
+      }
+    },
+    {
+      "id": "settings_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\u2699\ufe0f Game Options & Engine Settings"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "settings_divider",
+      "component": "Divider"
+    },
+    {
+      "id": "ai_level_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "AI Difficulty Strength (Elo 800 - 2800)"
+      },
+      "value": {
+        "path": "/settings/difficulty"
+      },
+      "min": 1.0,
+      "max": 10.0
+    },
+    {
+      "id": "settings_selectors_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "board_theme_picker",
+          "sound_picker"
+        ]
+      }
+    },
+    {
+      "id": "board_theme_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Board Theme"
+      },
+      "value": {
+        "path": "/settings/theme"
+      },
+      "options": [
+        {
+          "label": "\ud83c\udf3f Classic Green",
+          "value": "green"
+        },
+        {
+          "label": "\ud83e\udeb5 Royal Walnut",
+          "value": "walnut"
+        },
+        {
+          "label": "\ud83c\udf0c Obsidian Night",
+          "value": "obsidian"
+        },
+        {
+          "label": "\ud83c\udfdb\ufe0f Marble Tournament",
+          "value": "marble"
+        }
+      ]
+    },
+    {
+      "id": "sound_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Sound & Highlights"
+      },
+      "value": {
+        "path": "/settings/audio_mode"
+      },
+      "options": [
+        {
+          "label": "\ud83d\udd0a Sound & Highlighting",
+          "value": "full"
+        },
+        {
+          "label": "\ud83d\udd07 Silent with Highlights",
+          "value": "visual_only"
+        },
+        {
+          "label": "\ud83d\udeab Minimalist / Zen",
+          "value": "zen"
+        }
+      ]
+    }
+  ],
+  "data": {
+    "game": {
+      "mode": "ai",
+      "time_control": "rapid",
+      "turn": "white",
+      "move_count": 14,
+      "current_input": "O-O",
+      "player_color": "white",
+      "selected_square": null
+    },
+    "settings": {
+      "difficulty": 6,
+      "theme": "green",
+      "audio_mode": "full"
+    },
+    "board": {
+      "a8": "r",
+      "b8": null,
+      "c8": "b",
+      "d8": "q",
+      "e8": "k",
+      "f8": null,
+      "g8": null,
+      "h8": "r",
+      "a7": "p",
+      "b7": "p",
+      "c7": "p",
+      "d7": null,
+      "e7": "b",
+      "f7": "p",
+      "g7": "p",
+      "h7": "p",
+      "a6": null,
+      "b6": null,
+      "c6": "n",
+      "d6": "p",
+      "e6": null,
+      "f6": "n",
+      "g6": null,
+      "h6": null,
+      "a5": null,
+      "b5": null,
+      "c5": null,
+      "d5": null,
+      "e5": "p",
+      "f5": null,
+      "g5": null,
+      "h5": null,
+      "a4": null,
+      "b4": null,
+      "c4": null,
+      "d4": "P",
+      "e4": "P",
+      "f4": null,
+      "g4": null,
+      "h4": null,
+      "a3": null,
+      "b3": null,
+      "c3": "N",
+      "d3": null,
+      "e3": null,
+      "f3": "N",
+      "g3": null,
+      "h3": null,
+      "a2": "P",
+      "b2": "P",
+      "c2": "P",
+      "d2": null,
+      "e2": null,
+      "f2": "P",
+      "g2": "P",
+      "h2": "P",
+      "a1": "R",
+      "b1": null,
+      "c1": "B",
+      "d1": "Q",
+      "e1": "K",
+      "f1": "B",
+      "g1": null,
+      "h1": "R"
+    }
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I can build custom interactive apps for you. What kind of application would you like to create?"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what I plan to build for **Grandmaster Chess**:\n\nI'm building an interactive, beautifully styled chess app featuring a responsive board with move highlighting and full game rule enforcement. You will be able to play against an AI opponent or challenge a friend locally with real-time timers and move history.\n\n**Key features:**\n\u2022 Interactive 8x8 Board: Tap or drag pieces with visual indicators for legal moves, captures, and check alerts.\n\u2022 Game Modes & AI: Play against an adaptive AI bot or challenge a companion in pass-and-play mode.\n\u2022 Game Clock & Timers: Customizable blitz, rapid, and classic countdown clocks with active turn indicators.\n\u2022 Move History & Material Counter: Live algebraic notation log with captured pieces tray showing material advantage.\n\nPlease review the plan below and tap **Confirm & Build App** when ready!"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: Confirmed Plan for 'Grandmaster Chess': I'm building an interactive, beautifully styled chess app featuring a responsive board with move highlighting and full game rule enforcement. You will be able to play against an AI opponent or challenge a friend locally with real-time timers and move history.\n- q_key_features: create chess app]"
+    },
+    {
+      "role": "assistant",
+      "content": "Welcome to Grandmaster Chess! I have crafted a comprehensive chess suite featuring an interactive board layout with piece coordinate mapping, AI and local pass-and-play game modes, dynamic countdown clocks, material balance tracking, move notation history, and strategic engine analysis controls."
+    }
+  ]
+}

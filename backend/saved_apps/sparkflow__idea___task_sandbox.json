@@ -1,0 +1,458 @@
+{
+  "id": "sparkflow__idea___task_sandbox",
+  "name": "SparkFlow: Idea & Task Sandbox",
+  "updated_at": "2026-10-26T11:49:47.502956",
+  "component_count": 35,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "timer_card",
+          "capture_card",
+          "stream_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_title",
+          "header_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "header_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\u26a1 SparkFlow: Idea & Task Sandbox"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "header_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Brainstorm concepts, balance sprint intervals, and drive daily momentum."
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "timer_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "timer_heading",
+          "focus_mode_picker",
+          "rest_slider",
+          "timer_stats_row",
+          "timer_buttons_row"
+        ]
+      }
+    },
+    {
+      "id": "timer_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Sprint Rhythm & Rest Interval"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "focus_mode_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Session Mode"
+      },
+      "value": {
+        "path": "/session/mode"
+      },
+      "options": [
+        {
+          "label": "Deep Focus (25m)",
+          "value": "focus"
+        },
+        {
+          "label": "Rapid Ideation (15m)",
+          "value": "ideation"
+        },
+        {
+          "label": "Creative Freeform (45m)",
+          "value": "freeform"
+        }
+      ]
+    },
+    {
+      "id": "rest_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Rest Timer Interval (30s - 180s)"
+      },
+      "value": {
+        "path": "/session/rest_seconds"
+      },
+      "min": 30.0,
+      "max": 180.0
+    },
+    {
+      "id": "timer_stats_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "rest_timer_display",
+          "session_streak_display"
+        ]
+      }
+    },
+    {
+      "id": "rest_timer_display",
+      "component": "Text",
+      "text": {
+        "literalString": "Selected Rest Break: 90 seconds"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "session_streak_display",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udd25 Completed Sprints: 4"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "timer_buttons_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "btn_start_sprint",
+          "btn_take_rest"
+        ]
+      }
+    },
+    {
+      "id": "btn_start_sprint",
+      "component": "Button",
+      "text": {
+        "literalString": "Start Sprint Session"
+      },
+      "action": {
+        "name": "start_sprint",
+        "contextPath": "/session"
+      }
+    },
+    {
+      "id": "btn_take_rest",
+      "component": "Button",
+      "text": {
+        "literalString": "Trigger Rest Timer"
+      },
+      "action": {
+        "name": "trigger_rest",
+        "contextPath": "/session"
+      }
+    },
+    {
+      "id": "capture_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "capture_heading",
+          "task_input",
+          "category_picker",
+          "energy_slider",
+          "capture_btn"
+        ]
+      }
+    },
+    {
+      "id": "capture_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Quick Capture Deck"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "New Idea or Priority Task"
+      },
+      "value": {
+        "path": "/draft/title"
+      },
+      "placeholder": "e.g., Prototype dynamic card sorting system..."
+    },
+    {
+      "id": "category_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Stream Bucket"
+      },
+      "value": {
+        "path": "/draft/category"
+      },
+      "options": [
+        {
+          "label": "\ud83d\udca1 Idea Spark",
+          "value": "idea"
+        },
+        {
+          "label": "\ud83c\udfaf Critical Task",
+          "value": "task"
+        },
+        {
+          "label": "\ud83d\ude80 Milestone",
+          "value": "milestone"
+        }
+      ]
+    },
+    {
+      "id": "energy_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Estimated Effort / Energy (1 to 5)"
+      },
+      "value": {
+        "path": "/draft/energy"
+      },
+      "min": 1.0,
+      "max": 5.0
+    },
+    {
+      "id": "capture_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "+ Capture to Sandbox"
+      },
+      "action": {
+        "name": "capture_item",
+        "contextPath": "/draft"
+      }
+    },
+    {
+      "id": "stream_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "stream_heading",
+          "stream_filter_picker",
+          "divider_1",
+          "item_1_row",
+          "divider_2",
+          "item_2_row",
+          "divider_3",
+          "item_3_row"
+        ]
+      }
+    },
+    {
+      "id": "stream_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Active Project Stream & Momentum"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stream_filter_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Filter Stream"
+      },
+      "value": {
+        "path": "/filter"
+      },
+      "options": [
+        {
+          "label": "All Items",
+          "value": "all"
+        },
+        {
+          "label": "Ideas Only",
+          "value": "ideas"
+        },
+        {
+          "label": "Active Tasks",
+          "value": "tasks"
+        }
+      ]
+    },
+    {
+      "id": "divider_1",
+      "component": "Divider"
+    },
+    {
+      "id": "item_1_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "item_1_text",
+          "item_1_btn"
+        ]
+      }
+    },
+    {
+      "id": "item_1_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udca1 [Idea] Implement generative soundscape for focused sessions"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "item_1_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Promote to Task"
+      },
+      "action": {
+        "name": "promote_item",
+        "contextPath": "/items/0"
+      }
+    },
+    {
+      "id": "divider_2",
+      "component": "Divider"
+    },
+    {
+      "id": "item_2_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "item_2_text",
+          "item_2_btn"
+        ]
+      }
+    },
+    {
+      "id": "item_2_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udfaf [Task] Refine sprint intervals and test 60s rest cycles"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "item_2_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Complete \u2713"
+      },
+      "action": {
+        "name": "complete_item",
+        "contextPath": "/items/1"
+      }
+    },
+    {
+      "id": "divider_3",
+      "component": "Divider"
+    },
+    {
+      "id": "item_3_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "item_3_text",
+          "item_3_btn"
+        ]
+      }
+    },
+    {
+      "id": "item_3_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\ude80 [Milestone] Launch initial prototype to testing sandbox"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "item_3_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "In Progress"
+      },
+      "action": {
+        "name": "toggle_milestone",
+        "contextPath": "/items/2"
+      }
+    }
+  ],
+  "data": {
+    "session": {
+      "mode": "focus",
+      "rest_seconds": 90,
+      "sprints_completed": 4
+    },
+    "draft": {
+      "title": "",
+      "category": "idea",
+      "energy": 3
+    },
+    "filter": "all",
+    "items": [
+      {
+        "id": 1,
+        "title": "Implement generative soundscape for focused sessions",
+        "type": "idea",
+        "status": "active"
+      },
+      {
+        "id": 2,
+        "title": "Refine sprint intervals and test 60s rest cycles",
+        "type": "task",
+        "status": "active"
+      },
+      {
+        "id": 3,
+        "title": "Launch initial prototype to testing sandbox",
+        "type": "milestone",
+        "status": "pending"
+      }
+    ]
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I can build a custom interactive app for you. What would you like to create?"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what I plan to build for **SparkFlow: Idea & Task Sandbox**:\n\nI will build a dynamic productivity and creative sandbox designed to help you brainstorm ideas, organize goals, and track daily progress interactively. It offers an intuitive, clean interface ready for you to customize, test, and expand as your project grows.\n\n**Key features:**\n\u2022 Quick Capture Deck: interactive cards to easily jot down thoughts, ideas, and priority tasks with vibrant category tags\n\u2022 Momentum & Goal Tracker: visual progress metrics and interactive checklist items with instant completion animations\n\u2022 Filterable Project Stream: categorized views allowing quick search and toggle between active, archived, and highlighted items\n\nPlease review the plan below and tap **Confirm & Build App** when ready!"
+    },
+    {
+      "role": "user",
+      "content": "Add a rest timer slider (30 to 180 seconds)"
+    },
+    {
+      "role": "user",
+      "content": "[Adjustment: Add a rest timer slider (30 to 180 seconds)]"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: Confirmed Plan for 'SparkFlow: Idea & Task Sandbox': I will build a dynamic productivity and creative sandbox designed to help you brainstorm ideas, organize goals, and track daily progress interactively. It offers an intuitive, clean interface ready for you to customize, test, and expand as your project grows.\n- path: /clarification\n- user_adjustment: Add a rest timer slider (30 to 180 seconds)]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've created SparkFlow: Idea & Task Sandbox complete with your requested rest timer slider (30 to 180 seconds), quick idea capture deck, focus session mode controls, and momentum tracking."
+    },
+    {
+      "role": "user",
+      "content": "hello?"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm here and your SparkFlow Sandbox is ready. What would you like to add or tweak next?"
+    }
+  ]
+}

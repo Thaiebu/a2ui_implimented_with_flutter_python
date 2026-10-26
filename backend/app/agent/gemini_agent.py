@@ -18,6 +18,20 @@ from app.protocol.models import (
     PickerOption
 )
 
+from a2ui.builder.v0_9 import (
+    Column as A2UIColumn,
+    Card as A2UICard,
+    Text as A2UIText,
+    Button as A2UIButton,
+    Action as A2UIAction,
+    ActionEvent as A2UIActionEvent,
+    ChoicePicker as A2UIChoicePicker,
+    ChoicePickerOption as A2UIChoicePickerOption,
+    TextField as A2UITextField,
+    Divider as A2UIDivider,
+    DataBinding as A2UIDataBinding,
+)
+
 from app.agent.project_store import (
     save_app_to_disk,
     load_saved_app,
@@ -275,85 +289,53 @@ Output ONLY raw valid JSON. No wrapping.
     def _build_clarification_messages(
         self, session: AppBuilderSession, assistant_message: str, questions: List[Dict]
     ) -> List[A2UIMessage]:
-        """Converts clarification questions into an interactive A2UI surface."""
+        """Converts clarification questions into an interactive A2UI surface using a2ui.builder.v0_9."""
         clarify_surface_id = session.clarify_surface_id
-        components: List[ComponentDefinition] = []
-        children_ids: List[str] = []
         data: Dict[str, Any] = {"clarification": {}}
 
-        # Title
-        components.append(ComponentDefinition(
-            id="clarify_title",
-            component="Text",
-            text={"literalString": "📋 Help me understand what you'd like to build"},
-            usageHint="h1"
-        ))
-        children_ids.append("clarify_title")
+        children_nodes = [
+            A2UIText(id="clarify_title", text="📋 Help me understand what you'd like to build", variant="h1")
+        ]
 
         for q in questions:
-            q_id = q.get("id", f"q_{len(children_ids)}")
+            q_id = q.get("id", f"q_{len(children_nodes)}")
             q_text = q.get("question", "Please specify:")
             q_type = q.get("type", "text")
 
-            # Question label
-            label_id = f"{q_id}_label"
-            components.append(ComponentDefinition(
-                id=label_id,
-                component="Text",
-                text={"literalString": q_text},
-                usageHint="h2"
-            ))
-            children_ids.append(label_id)
+            children_nodes.append(A2UIText(id=f"{q_id}_label", text=q_text, variant="h2"))
 
             if q_type == "choice":
                 options_raw = q.get("options", [])
                 picker_options = [
-                    PickerOption(
+                    A2UIChoicePickerOption(
                         label=str(opt),
                         value=str(opt).lower().replace(" ", "_")
                     )
                     for opt in options_raw
                 ]
-                components.append(ComponentDefinition(
+                children_nodes.append(A2UIChoicePicker(
                     id=q_id,
-                    component="ChoicePicker",
-                    label={"literalString": "Select one"},
+                    label="Select one",
                     options=picker_options,
-                    value={"path": f"/clarification/{q_id}"}
+                    value=A2UIDataBinding(path=f"/clarification/{q_id}")
                 ))
-                children_ids.append(q_id)
-                data["clarification"][q_id] = ""
             else:
-                components.append(ComponentDefinition(
+                children_nodes.append(A2UITextField(
                     id=q_id,
-                    component="TextField",
-                    label={"literalString": "Your answer"},
-                    placeholder="Type your answer here...",
-                    value={"path": f"/clarification/{q_id}"}
+                    label="Your answer",
+                    value=A2UIDataBinding(path=f"/clarification/{q_id}")
                 ))
-                children_ids.append(q_id)
-                data["clarification"][q_id] = ""
+            data["clarification"][q_id] = ""
 
-        # Divider before submit
-        components.append(ComponentDefinition(id="clarify_divider", component="Divider"))
-        children_ids.append("clarify_divider")
-
-        # Submit button
-        components.append(ComponentDefinition(
+        children_nodes.append(A2UIDivider(id="clarify_divider"))
+        children_nodes.append(A2UIButton(
             id="submit_clarification_btn",
-            component="Button",
-            text={"literalString": "✅ Build My App"},
-            action=ActionDefinition(name="submit_clarification", contextPath="/clarification")
+            child=A2UIText(text="✅ Build My App"),
+            action=A2UIAction(event=A2UIActionEvent(name="submit_clarification", context={"path": "/clarification"}))
         ))
-        children_ids.append("submit_clarification_btn")
 
-        # Root column wrapping everything
-        root = ComponentDefinition(
-            id="root_col",
-            component="Column",
-            children=ComponentChildren(explicitList=children_ids)
-        )
-        components.insert(0, root)
+        tree = A2UIColumn(id="root", children=children_nodes)
+        components = tree.flatten()
 
         return [
             A2UIMessage(
@@ -489,74 +471,34 @@ OUTPUT FORMAT (strictly valid JSON, NO markdown code blocks):
         )
         session.history.append({"role": "assistant", "content": assistant_msg})
 
-        components: List[ComponentDefinition] = []
-        children_ids: List[str] = []
+        feat_texts = [
+            A2UIText(id=f"feat_{i}", text=f"✨ {feat}", variant="caption")
+            for i, feat in enumerate(features[:4])
+        ]
 
-        # Header Title
-        components.append(ComponentDefinition(
-            id="plan_title",
-            component="Text",
-            text={"literalString": f"📋 Blueprint: {app_name}"},
-            usageHint="h1"
-        ))
-        children_ids.append("plan_title")
-
-        # Overview
-        components.append(ComponentDefinition(
-            id="plan_desc",
-            component="Text",
-            text={"literalString": explanation},
-            usageHint="body"
-        ))
-        children_ids.append("plan_desc")
-
-        # Feature highlights in Card
-        feature_children: List[str] = []
-        for i, feat in enumerate(features[:4]):
-            fid = f"feat_{i}"
-            components.append(ComponentDefinition(
-                id=fid,
-                component="Text",
-                text={"literalString": f"✨ {feat}"},
-                usageHint="caption"
-            ))
-            feature_children.append(fid)
-
-        components.append(ComponentDefinition(
-            id="features_card",
-            component="Card",
-            children=ComponentChildren(explicitList=feature_children)
-        ))
-        children_ids.append("features_card")
-
-        components.append(ComponentDefinition(id="plan_div", component="Divider"))
-        children_ids.append("plan_div")
-
-        # Optional Adjustment TextField
-        components.append(ComponentDefinition(
-            id="adjustments_input",
-            component="TextField",
-            label={"literalString": "Any quick adjustments? (optional)"},
-            placeholder="Type extra requirements or leave blank...",
-            value={"path": "/confirmation/adjustments"}
-        ))
-        children_ids.append("adjustments_input")
-
-        # Confirm & Build Button
-        components.append(ComponentDefinition(
-            id="confirm_build_btn",
-            component="Button",
-            text={"literalString": "🚀 Confirm & Build App"},
-            action=ActionDefinition(name="confirm_build", contextPath="/confirmation")
-        ))
-        children_ids.append("confirm_build_btn")
-
-        root = ComponentDefinition(
-            id="root_col",
-            component="Column",
-            children=ComponentChildren(explicitList=children_ids)
+        tree = A2UIColumn(
+            id="root",
+            children=[
+                A2UIText(id="plan_title", text=f"📋 Blueprint: {app_name}", variant="h1"),
+                A2UIText(id="plan_desc", text=explanation, variant="body"),
+                A2UICard(
+                    id="features_card",
+                    child=A2UIColumn(children=feat_texts)
+                ),
+                A2UIDivider(id="plan_div"),
+                A2UITextField(
+                    id="adjustments_input",
+                    label="Any quick adjustments? (optional)",
+                    value=A2UIDataBinding(path="/confirmation/adjustments")
+                ),
+                A2UIButton(
+                    id="confirm_build_btn",
+                    child=A2UIText(text="🚀 Confirm & Build App"),
+                    action=A2UIAction(event=A2UIActionEvent(name="confirm_build", context={"path": "/confirmation"}))
+                )
+            ]
         )
-        components.insert(0, root)
+        components = tree.flatten()
 
         surface_id = session.clarify_surface_id
 

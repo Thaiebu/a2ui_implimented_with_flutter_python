@@ -41,7 +41,9 @@ class ComponentDefinition(BaseModel):
         if isinstance(v, str):
             if v.startswith("/"):
                 return {"path": v}
-            return {"literalString": v}
+            return v
+        if isinstance(v, dict) and "literalString" in v and len(v) == 1:
+            return v["literalString"]
         return v
 
     @field_validator("options", mode="before")
@@ -64,9 +66,11 @@ class ComponentDefinition(BaseModel):
             return {"name": v, "contextPath": "/"}
         return v
 
-    text: Optional[Dict[str, Any]] = None
-    label: Optional[Dict[str, Any]] = None
-    value: Optional[Dict[str, Any]] = None
+    child: Optional[str] = None
+    variant: Optional[str] = None
+    text: Optional[Union[str, Dict[str, Any]]] = None
+    label: Optional[Union[str, Dict[str, Any]]] = None
+    value: Optional[Union[str, List[Any], Dict[str, Any]]] = None
     usageHint: Optional[str] = None  # h1, h2, body, caption
     action: Optional[ActionDefinition] = None
     options: Optional[List[PickerOption]] = None
@@ -78,7 +82,7 @@ class ComponentDefinition(BaseModel):
 
 class UpdateComponentsPayload(BaseModel):
     surfaceId: str
-    components: List[ComponentDefinition]
+    components: List[Union[Dict[str, Any], ComponentDefinition]]
 
 class UpdateDataModelPayload(BaseModel):
     surfaceId: str
