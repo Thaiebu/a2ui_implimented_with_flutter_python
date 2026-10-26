@@ -1,0 +1,117 @@
+{
+  "id": "workout_fitness_tracker",
+  "name": "Workout Fitness Tracker",
+  "updated_at": "2026-10-23T07:23:36.285977",
+  "component_count": 7,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "card_header",
+          "content_card",
+          "input_field",
+          "submit_btn"
+        ]
+      }
+    },
+    {
+      "id": "card_header",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udfcb\ufe0f Workout Fitness Tracker"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "content_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "desc_text",
+          "status_text"
+        ]
+      }
+    },
+    {
+      "id": "desc_text",
+      "component": "Text",
+      "text": {
+        "path": "/app/description"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "status_text",
+      "component": "Text",
+      "text": {
+        "path": "/app/status"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "input_field",
+      "component": "TextField",
+      "label": {
+        "literalString": "Exercise or Task Name"
+      },
+      "value": {
+        "path": "/app/exercise"
+      },
+      "placeholder": "e.g. Barbell Squats"
+    },
+    {
+      "id": "submit_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Log Entry"
+      },
+      "action": {
+        "name": "log_entry",
+        "contextPath": "/app"
+      }
+    }
+  ],
+  "data": {
+    "app": {
+      "description": "Active workout routine for: workout fitness tracker",
+      "status": "Session Active \u2022 0 sets completed",
+      "exercise": "Bench Press"
+    }
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "build me an app"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd love to build an app for you! To create the right solution, please share a few details about what you need."
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: workout_fitness_tracker\n- q_key_features: Workout list, set counters, rest timer]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've built a comprehensive Workout & Fitness Tracker application featuring an active rest timer with quick controls, an interactive set/rep logger, and a routine workout overview."
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: workout_fitness_tracker\n- q_key_features: Workout list, set counters, rest timer]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've built a comprehensive Workout & Fitness Tracker application featuring an active rest timer with quick controls, an interactive set/rep logger, and a routine workout overview."
+    },
+    {
+      "role": "user",
+      "content": "workout fitness tracker"
+    },
+    {
+      "role": "assistant",
+      "content": "Built your initial Workout Fitness Tracker app! What features or controls would you like to add next?"
+    }
+  ]
+}

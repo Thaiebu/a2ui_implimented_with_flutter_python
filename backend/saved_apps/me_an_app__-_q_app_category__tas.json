@@ -1,0 +1,629 @@
+{
+  "id": "me_an_app__-_q_app_category__tas",
+  "name": "Me An App (- Q_App_Category: Tas",
+  "updated_at": "2026-10-23T08:41:22.178730",
+  "component_count": 52,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "quick_log_card",
+          "add_task_card",
+          "section_divider",
+          "schedule_title",
+          "task_item_1",
+          "task_item_2",
+          "task_item_3",
+          "reflection_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_content_col"
+        ]
+      }
+    },
+    {
+      "id": "header_content_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "app_title",
+          "app_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "app_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\u2600\ufe0f DayFlow Daily Planner"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "app_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Organize your priorities, balance energy, and execute your day with intention."
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "quick_log_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "quick_log_col"
+        ]
+      }
+    },
+    {
+      "id": "quick_log_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "quick_log_heading",
+          "energy_slider",
+          "filter_picker"
+        ]
+      }
+    },
+    {
+      "id": "quick_log_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Daily Readiness & Views"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "energy_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Morning Energy & Focus Level (1 - 10)"
+      },
+      "value": {
+        "path": "/energy_level"
+      },
+      "min": 1.0,
+      "max": 10.0
+    },
+    {
+      "id": "filter_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Filter Schedule View"
+      },
+      "value": {
+        "path": "/active_filter"
+      },
+      "options": [
+        {
+          "label": "All Day",
+          "value": "all"
+        },
+        {
+          "label": "Morning Focus",
+          "value": "morning"
+        },
+        {
+          "label": "Afternoon Work",
+          "value": "afternoon"
+        },
+        {
+          "label": "Evening Wind-down",
+          "value": "evening"
+        }
+      ]
+    },
+    {
+      "id": "add_task_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "add_task_col"
+        ]
+      }
+    },
+    {
+      "id": "add_task_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "add_task_heading",
+          "task_name_field",
+          "task_meta_row",
+          "add_task_btn"
+        ]
+      }
+    },
+    {
+      "id": "add_task_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Add a New Task"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_name_field",
+      "component": "TextField",
+      "label": {
+        "literalString": "Task Name"
+      },
+      "value": {
+        "path": "/new_task/title"
+      },
+      "placeholder": "e.g., Deep work session on presentation..."
+    },
+    {
+      "id": "task_meta_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_priority_picker",
+          "task_slot_picker"
+        ]
+      }
+    },
+    {
+      "id": "task_priority_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Priority"
+      },
+      "value": {
+        "path": "/new_task/priority"
+      },
+      "options": [
+        {
+          "label": "\ud83d\udd25 High",
+          "value": "high"
+        },
+        {
+          "label": "\u26a1 Medium",
+          "value": "medium"
+        },
+        {
+          "label": "\ud83c\udf31 Low",
+          "value": "low"
+        }
+      ]
+    },
+    {
+      "id": "task_slot_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Time Block"
+      },
+      "value": {
+        "path": "/new_task/slot"
+      },
+      "options": [
+        {
+          "label": "\ud83c\udf05 Morning",
+          "value": "morning"
+        },
+        {
+          "label": "\u2600\ufe0f Afternoon",
+          "value": "afternoon"
+        },
+        {
+          "label": "\ud83c\udf19 Evening",
+          "value": "evening"
+        }
+      ]
+    },
+    {
+      "id": "add_task_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Add to Daily Plan"
+      },
+      "action": {
+        "name": "add_task",
+        "contextPath": "/new_task"
+      }
+    },
+    {
+      "id": "section_divider",
+      "component": "Divider"
+    },
+    {
+      "id": "schedule_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Today's Agenda"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_item_1",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_1_col"
+        ]
+      }
+    },
+    {
+      "id": "task_1_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_1_row",
+          "task_1_desc",
+          "task_1_actions_row"
+        ]
+      }
+    },
+    {
+      "id": "task_1_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_1_title",
+          "task_1_badge"
+        ]
+      }
+    },
+    {
+      "id": "task_1_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udf05 Morning Review & Inbox Zero"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_1_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "High Priority"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_1_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Review calendar events, triage critical emails, and outline top 3 targets for the day."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_1_actions_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_1_status_picker",
+          "task_1_done_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_1_status_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Status"
+      },
+      "value": {
+        "path": "/tasks/task_1/status"
+      },
+      "options": [
+        {
+          "label": "Pending",
+          "value": "pending"
+        },
+        {
+          "label": "In Progress",
+          "value": "in_progress"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "id": "task_1_done_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "complete_task",
+        "contextPath": "/tasks/task_1"
+      }
+    },
+    {
+      "id": "task_item_2",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_2_col"
+        ]
+      }
+    },
+    {
+      "id": "task_2_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_2_row",
+          "task_2_desc",
+          "task_2_actions_row"
+        ]
+      }
+    },
+    {
+      "id": "task_2_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_2_title",
+          "task_2_badge"
+        ]
+      }
+    },
+    {
+      "id": "task_2_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\u2600\ufe0f Project Deep Dive"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_2_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "Medium Priority"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_2_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Draft the quarterly milestones report and share updates with teammates."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_2_actions_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_2_status_picker",
+          "task_2_done_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_2_status_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Status"
+      },
+      "value": {
+        "path": "/tasks/task_2/status"
+      },
+      "options": [
+        {
+          "label": "Pending",
+          "value": "pending"
+        },
+        {
+          "label": "In Progress",
+          "value": "in_progress"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "id": "task_2_done_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "complete_task",
+        "contextPath": "/tasks/task_2"
+      }
+    },
+    {
+      "id": "task_item_3",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_3_col"
+        ]
+      }
+    },
+    {
+      "id": "task_3_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_3_row",
+          "task_3_desc",
+          "task_3_actions_row"
+        ]
+      }
+    },
+    {
+      "id": "task_3_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_3_title",
+          "task_3_badge"
+        ]
+      }
+    },
+    {
+      "id": "task_3_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udf19 30-min Evening Walk & Reflection"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_3_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "Wellness"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_3_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Disconnect from devices, stretch, and reflect on accomplishments before bed."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_3_actions_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_3_status_picker",
+          "task_3_done_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_3_status_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Status"
+      },
+      "value": {
+        "path": "/tasks/task_3/status"
+      },
+      "options": [
+        {
+          "label": "Pending",
+          "value": "pending"
+        },
+        {
+          "label": "In Progress",
+          "value": "in_progress"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "id": "task_3_done_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "complete_task",
+        "contextPath": "/tasks/task_3"
+      }
+    },
+    {
+      "id": "reflection_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "reflection_col"
+        ]
+      }
+    },
+    {
+      "id": "reflection_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "reflection_heading",
+          "daily_notes_field",
+          "save_reflection_btn"
+        ]
+      }
+    },
+    {
+      "id": "reflection_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Daily Notes & Wins"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "daily_notes_field",
+      "component": "TextField",
+      "label": {
+        "literalString": "End-of-day Note / Journaling"
+      },
+      "value": {
+        "path": "/notes/reflection"
+      },
+      "placeholder": "What went well today? What can be improved tomorrow?"
+    },
+    {
+      "id": "save_reflection_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Save Day Log"
+      },
+      "action": {
+        "name": "save_reflection",
+        "contextPath": "/notes"
+      }
+    }
+  ],
+  "data": {
+    "energy_level": 8,
+    "active_filter": "all",
+    "new_task": {
+      "title": "",
+      "priority": "medium",
+      "slot": "morning"
+    },
+    "tasks": {
+      "task_1": {
+        "status": "in_progress"
+      },
+      "task_2": {
+        "status": "pending"
+      },
+      "task_3": {
+        "status": "pending"
+      }
+    },
+    "notes": {
+      "reflection": "Completed key items before 11 AM; maintained focused attention during meetings."
+    }
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_category: Task & To-Do Manager\n- q_primary_goal: Daily personal organization]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've created 'DayFlow', a daily personal organization and task management app tailored to help you structure your day, prioritize tasks across morning, afternoon, and evening slots, and monitor your daily energy levels."
+    }
+  ]
+}

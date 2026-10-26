@@ -1,0 +1,266 @@
+{
+  "id": "todo_list",
+  "name": "Todo list",
+  "updated_at": "2026-10-22T11:27:40.517722",
+  "component_count": 20,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "card_header",
+          "content_card",
+          "habits_card",
+          "input_field",
+          "frequency_picker",
+          "submit_btn"
+        ]
+      }
+    },
+    {
+      "id": "card_header",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udccb Habit & Daily Task Tracker"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "content_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "desc_text",
+          "status_text"
+        ]
+      }
+    },
+    {
+      "id": "desc_text",
+      "component": "Text",
+      "text": {
+        "path": "/app/description"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "status_text",
+      "component": "Text",
+      "text": {
+        "path": "/app/status"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "habits_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "habits_heading",
+          "divider_1",
+          "habit_row_1",
+          "habit_row_2",
+          "habit_row_3"
+        ]
+      }
+    },
+    {
+      "id": "habits_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Today's Habit Checklist"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "divider_1",
+      "component": "Divider"
+    },
+    {
+      "id": "habit_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "habit_text_1",
+          "habit_btn_1"
+        ]
+      }
+    },
+    {
+      "id": "habit_text_1",
+      "component": "Text",
+      "text": {
+        "path": "/habits/0/title"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "habit_btn_1",
+      "component": "Button",
+      "text": {
+        "literalString": "Done \u2713"
+      },
+      "action": {
+        "name": "toggle_habit",
+        "contextPath": "/habits/0"
+      }
+    },
+    {
+      "id": "habit_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "habit_text_2",
+          "habit_btn_2"
+        ]
+      }
+    },
+    {
+      "id": "habit_text_2",
+      "component": "Text",
+      "text": {
+        "path": "/habits/1/title"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "habit_btn_2",
+      "component": "Button",
+      "text": {
+        "literalString": "Done \u2713"
+      },
+      "action": {
+        "name": "toggle_habit",
+        "contextPath": "/habits/1"
+      }
+    },
+    {
+      "id": "habit_row_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "habit_text_3",
+          "habit_btn_3"
+        ]
+      }
+    },
+    {
+      "id": "habit_text_3",
+      "component": "Text",
+      "text": {
+        "path": "/habits/2/title"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "habit_btn_3",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_habit",
+        "contextPath": "/habits/2"
+      }
+    },
+    {
+      "id": "input_field",
+      "component": "TextField",
+      "label": {
+        "literalString": "New Habit or Task"
+      },
+      "value": {
+        "path": "/app/new_habit"
+      },
+      "placeholder": "e.g. Read 20 pages"
+    },
+    {
+      "id": "frequency_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Frequency"
+      },
+      "value": {
+        "path": "/app/frequency"
+      },
+      "options": [
+        {
+          "label": "Daily",
+          "value": "daily"
+        },
+        {
+          "label": "Weekly",
+          "value": "weekly"
+        },
+        {
+          "label": "Workdays",
+          "value": "workdays"
+        }
+      ]
+    },
+    {
+      "id": "submit_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Add Habit"
+      },
+      "action": {
+        "name": "add_habit",
+        "contextPath": "/app"
+      }
+    }
+  ],
+  "data": {
+    "app": {
+      "description": "Stay consistent and build healthy routines one day at a time.",
+      "status": "Today: 2 of 3 habits completed \u2022 67% on track",
+      "exercise": "Morning Meditation",
+      "new_habit": "",
+      "frequency": "daily"
+    },
+    "habits": [
+      {
+        "id": "1",
+        "title": "\ud83d\udca7 Drink 2L of water",
+        "completed": true
+      },
+      {
+        "id": "2",
+        "title": "\ud83e\uddd8 10 min mindfulness / meditation",
+        "completed": true
+      },
+      {
+        "id": "3",
+        "title": "\ud83d\udcda Read 20 pages of a book",
+        "completed": false
+      }
+    ],
+    "description": "Stay consistent and build healthy routines one day at a time.",
+    "status": "Today: 2 of 3 habits completed \u2022 67% on track",
+    "exercise": "Morning Meditation",
+    "id": "3",
+    "title": "\ud83d\udcda Read 20 pages of a book",
+    "completed": false,
+    "new_habit": "sleeping",
+    "frequency": "daily"
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "Build a personal expense tracker with budget categories"
+    },
+    {
+      "role": "assistant",
+      "content": "Built your initial Build A Personal Expense Tracker With Budget Categories app! What features or controls would you like to add next?"
+    },
+    {
+      "role": "user",
+      "content": "Create todo list to track my habit"
+    },
+    {
+      "role": "assistant",
+      "content": "I've added a habit tracking todo list to your app, complete with active habit check-offs, frequency options, and daily progress tracking."
+    }
+  ]
+}

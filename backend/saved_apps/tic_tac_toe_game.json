@@ -1,0 +1,279 @@
+{
+  "id": "tic_tac_toe_game",
+  "name": "Tic Tac Toe Game",
+  "updated_at": "2026-10-23T08:51:58.409019",
+  "component_count": 19,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "game_title",
+          "status_card",
+          "grid_card",
+          "reset_btn"
+        ]
+      }
+    },
+    {
+      "id": "game_title",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udfae Tic Tac Toe (Flutter A2UI)"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "status_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "turn_text",
+          "score_text"
+        ]
+      }
+    },
+    {
+      "id": "turn_text",
+      "component": "Text",
+      "text": {
+        "path": "/game/status"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "score_text",
+      "component": "Text",
+      "text": {
+        "path": "/game/score"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "grid_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "row_0",
+          "row_1",
+          "row_2"
+        ]
+      }
+    },
+    {
+      "id": "row_0",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "cell_0_0",
+          "cell_0_1",
+          "cell_0_2"
+        ]
+      }
+    },
+    {
+      "id": "cell_0_0",
+      "component": "Button",
+      "text": {
+        "path": "/board/0/0"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 0,
+          "col": 0
+        }
+      }
+    },
+    {
+      "id": "cell_0_1",
+      "component": "Button",
+      "text": {
+        "path": "/board/0/1"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 0,
+          "col": 1
+        }
+      }
+    },
+    {
+      "id": "cell_0_2",
+      "component": "Button",
+      "text": {
+        "path": "/board/0/2"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 0,
+          "col": 2
+        }
+      }
+    },
+    {
+      "id": "row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "cell_1_0",
+          "cell_1_1",
+          "cell_1_2"
+        ]
+      }
+    },
+    {
+      "id": "cell_1_0",
+      "component": "Button",
+      "text": {
+        "path": "/board/1/0"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 1,
+          "col": 0
+        }
+      }
+    },
+    {
+      "id": "cell_1_1",
+      "component": "Button",
+      "text": {
+        "path": "/board/1/1"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 1,
+          "col": 1
+        }
+      }
+    },
+    {
+      "id": "cell_1_2",
+      "component": "Button",
+      "text": {
+        "path": "/board/1/2"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 1,
+          "col": 2
+        }
+      }
+    },
+    {
+      "id": "row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "cell_2_0",
+          "cell_2_1",
+          "cell_2_2"
+        ]
+      }
+    },
+    {
+      "id": "cell_2_0",
+      "component": "Button",
+      "text": {
+        "path": "/board/2/0"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 2,
+          "col": 0
+        }
+      }
+    },
+    {
+      "id": "cell_2_1",
+      "component": "Button",
+      "text": {
+        "path": "/board/2/1"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 2,
+          "col": 1
+        }
+      }
+    },
+    {
+      "id": "cell_2_2",
+      "component": "Button",
+      "text": {
+        "path": "/board/2/2"
+      },
+      "action": {
+        "name": "play_cell",
+        "contextPath": "/game",
+        "parameters": {
+          "row": 2,
+          "col": 2
+        }
+      }
+    },
+    {
+      "id": "reset_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "\ud83d\udd04 Reset Board"
+      },
+      "action": {
+        "name": "reset_game",
+        "contextPath": "/game"
+      }
+    }
+  ],
+  "data": {
+    "game": {
+      "status": "Player O's Turn",
+      "score": "X: 0 wins \u2022 O: 0 wins",
+      "turn": "O",
+      "winner": ""
+    },
+    "board": [
+      [
+        "[ - ]",
+        "[ - ]",
+        "[ - ]"
+      ],
+      [
+        "[ - ]",
+        "[ - ]",
+        "[ X ]"
+      ],
+      [
+        "[ X ]",
+        "[ - ]",
+        "[ O ]"
+      ]
+    ]
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "Create tic tac toe game in flutter"
+    },
+    {
+      "role": "assistant",
+      "content": "Built an interactive 3x3 Tic Tac Toe game with turn tracking and instant board updates!"
+    }
+  ]
+}

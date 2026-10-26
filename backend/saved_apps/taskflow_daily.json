@@ -1,0 +1,853 @@
+{
+  "id": "taskflow_daily",
+  "name": "TaskFlow Daily",
+  "updated_at": "2026-10-23T09:07:22.790361",
+  "component_count": 74,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "stats_card",
+          "add_section_card",
+          "checklist_quickadd_card",
+          "filter_row",
+          "task_list_title",
+          "task_card_1",
+          "task_card_2",
+          "task_card_3",
+          "task_card_4"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_title",
+          "header_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "header_title",
+      "component": "Text",
+      "text": {
+        "literalString": "TaskFlow Daily & Checklists"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "header_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Organize your workflow, monitor daily progress, and tick off checklist items."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "stats_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "stats_row"
+        ]
+      }
+    },
+    {
+      "id": "stats_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "stat_done_col",
+          "stat_pending_col",
+          "stat_rate_col"
+        ]
+      }
+    },
+    {
+      "id": "stat_done_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_done_label",
+          "stat_done_val"
+        ]
+      }
+    },
+    {
+      "id": "stat_done_label",
+      "component": "Text",
+      "text": {
+        "literalString": "COMPLETED"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_done_val",
+      "component": "Text",
+      "text": {
+        "literalString": "3 Tasks"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_pending_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_pending_label",
+          "stat_pending_val"
+        ]
+      }
+    },
+    {
+      "id": "stat_pending_label",
+      "component": "Text",
+      "text": {
+        "literalString": "PENDING"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_pending_val",
+      "component": "Text",
+      "text": {
+        "literalString": "2 Tasks"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_rate_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_rate_label",
+          "stat_rate_val"
+        ]
+      }
+    },
+    {
+      "id": "stat_rate_label",
+      "component": "Text",
+      "text": {
+        "literalString": "PROGRESS"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_rate_val",
+      "component": "Text",
+      "text": {
+        "literalString": "60%"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "add_section_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "add_section_title",
+          "task_title_input",
+          "add_options_row",
+          "add_task_btn"
+        ]
+      }
+    },
+    {
+      "id": "add_section_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Add New Task or Project"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_title_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "Task Description"
+      },
+      "value": {
+        "path": "/newTask/title"
+      },
+      "placeholder": "e.g., Finalize presentation slides"
+    },
+    {
+      "id": "add_options_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "priority_picker",
+          "category_picker"
+        ]
+      }
+    },
+    {
+      "id": "priority_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Priority"
+      },
+      "value": {
+        "path": "/newTask/priority"
+      },
+      "options": [
+        {
+          "label": "High",
+          "value": "high"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Low",
+          "value": "low"
+        }
+      ]
+    },
+    {
+      "id": "category_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Type"
+      },
+      "value": {
+        "path": "/newTask/category"
+      },
+      "options": [
+        {
+          "label": "General Task",
+          "value": "task"
+        },
+        {
+          "label": "Checklist Item",
+          "value": "checklist"
+        },
+        {
+          "label": "Work Goal",
+          "value": "work"
+        }
+      ]
+    },
+    {
+      "id": "add_task_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "+ Create Task / Item"
+      },
+      "action": {
+        "name": "create_task",
+        "contextPath": "/newTask"
+      }
+    },
+    {
+      "id": "checklist_quickadd_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "checklist_box_title",
+          "checklist_box_desc",
+          "quick_checklist_row"
+        ]
+      }
+    },
+    {
+      "id": "checklist_box_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Quick Checklist Pad"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "checklist_box_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Jot down rapid micro-tasks, groceries, or sub-checkpoints."
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "quick_checklist_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "quick_item_input",
+          "quick_item_add_btn"
+        ]
+      }
+    },
+    {
+      "id": "quick_item_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "Micro Checklist Item"
+      },
+      "value": {
+        "path": "/quickChecklist/input"
+      },
+      "placeholder": "e.g., Buy almond milk, check server logs..."
+    },
+    {
+      "id": "quick_item_add_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Add Check Item"
+      },
+      "action": {
+        "name": "add_quick_checklist",
+        "contextPath": "/quickChecklist"
+      }
+    },
+    {
+      "id": "filter_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "filter_picker"
+        ]
+      }
+    },
+    {
+      "id": "filter_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Filter View"
+      },
+      "value": {
+        "path": "/filter"
+      },
+      "options": [
+        {
+          "label": "All Items",
+          "value": "all"
+        },
+        {
+          "label": "Active Only",
+          "value": "active"
+        },
+        {
+          "label": "Checklists",
+          "value": "checklists"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "id": "task_list_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Today's Agenda & Checklists"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_card_1",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_1_row"
+        ]
+      }
+    },
+    {
+      "id": "task_1_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_1_info_col",
+          "task_1_action_col"
+        ]
+      }
+    },
+    {
+      "id": "task_1_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_1_title",
+          "task_1_meta"
+        ]
+      }
+    },
+    {
+      "id": "task_1_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Prepare Q3 Marketing Review slides"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_1_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: HIGH | Category: Work | Due: Today 3:00 PM"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_1_action_col",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_1_toggle_btn",
+          "task_1_del_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_1_toggle_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/task_1"
+      }
+    },
+    {
+      "id": "task_1_del_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Delete"
+      },
+      "action": {
+        "name": "delete_task",
+        "contextPath": "/tasks/task_1"
+      }
+    },
+    {
+      "id": "task_card_2",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_2_row",
+          "task_2_subtasks_box"
+        ]
+      }
+    },
+    {
+      "id": "task_2_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_2_info_col",
+          "task_2_action_col"
+        ]
+      }
+    },
+    {
+      "id": "task_2_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_2_title",
+          "task_2_meta"
+        ]
+      }
+    },
+    {
+      "id": "task_2_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Grocery & Pantry Restock (Checklist)"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_2_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: MEDIUM | Category: Checklist | 2 of 3 Done"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_2_action_col",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_2_toggle_btn",
+          "task_2_del_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_2_toggle_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/task_2"
+      }
+    },
+    {
+      "id": "task_2_del_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Delete"
+      },
+      "action": {
+        "name": "delete_task",
+        "contextPath": "/tasks/task_2"
+      }
+    },
+    {
+      "id": "task_2_subtasks_box",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "divider_subtasks",
+          "subtask_item_1",
+          "subtask_item_2",
+          "subtask_item_3"
+        ]
+      }
+    },
+    {
+      "id": "divider_subtasks",
+      "component": "Divider"
+    },
+    {
+      "id": "subtask_item_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "subtask_1_text",
+          "subtask_1_btn"
+        ]
+      }
+    },
+    {
+      "id": "subtask_1_text",
+      "component": "Text",
+      "text": {
+        "literalString": "[Completed] Fresh fruits and avocados"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "subtask_1_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Undo"
+      },
+      "action": {
+        "name": "toggle_subtask",
+        "contextPath": "/subtasks/sub_1"
+      }
+    },
+    {
+      "id": "subtask_item_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "subtask_2_text",
+          "subtask_2_btn"
+        ]
+      }
+    },
+    {
+      "id": "subtask_2_text",
+      "component": "Text",
+      "text": {
+        "literalString": "[Completed] Colombian roast coffee beans"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "subtask_2_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Undo"
+      },
+      "action": {
+        "name": "toggle_subtask",
+        "contextPath": "/subtasks/sub_2"
+      }
+    },
+    {
+      "id": "subtask_item_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "subtask_3_text",
+          "subtask_3_btn"
+        ]
+      }
+    },
+    {
+      "id": "subtask_3_text",
+      "component": "Text",
+      "text": {
+        "literalString": "[Pending] Almond unsweetened milk"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "subtask_3_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Check Off"
+      },
+      "action": {
+        "name": "toggle_subtask",
+        "contextPath": "/subtasks/sub_3"
+      }
+    },
+    {
+      "id": "task_card_3",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_3_row"
+        ]
+      }
+    },
+    {
+      "id": "task_3_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_3_info_col",
+          "task_3_action_col"
+        ]
+      }
+    },
+    {
+      "id": "task_3_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_3_title",
+          "task_3_meta"
+        ]
+      }
+    },
+    {
+      "id": "task_3_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Call dental clinic to reschedule cleaning"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_3_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: LOW | Category: Personal | Status: Pending"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_3_action_col",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_3_toggle_btn",
+          "task_3_del_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_3_toggle_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/task_3"
+      }
+    },
+    {
+      "id": "task_3_del_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Delete"
+      },
+      "action": {
+        "name": "delete_task",
+        "contextPath": "/tasks/task_3"
+      }
+    },
+    {
+      "id": "task_card_4",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_4_row"
+        ]
+      }
+    },
+    {
+      "id": "task_4_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_4_info_col",
+          "task_4_action_col"
+        ]
+      }
+    },
+    {
+      "id": "task_4_info_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "task_4_title",
+          "task_4_meta"
+        ]
+      }
+    },
+    {
+      "id": "task_4_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Daily 15-Minute Morning Mobility Stretch"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_4_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: MEDIUM | Category: Checklist | Status: Completed"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_4_action_col",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_4_toggle_btn",
+          "task_4_del_btn"
+        ]
+      }
+    },
+    {
+      "id": "task_4_toggle_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Completed"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/task_4"
+      }
+    },
+    {
+      "id": "task_4_del_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Delete"
+      },
+      "action": {
+        "name": "delete_task",
+        "contextPath": "/tasks/task_4"
+      }
+    }
+  ],
+  "data": {
+    "filter": "all",
+    "newTask": {
+      "title": "",
+      "priority": "medium",
+      "category": "task"
+    },
+    "quickChecklist": {
+      "input": ""
+    },
+    "stats": {
+      "completedCount": 3,
+      "pendingCount": 2,
+      "completionRate": "60%"
+    },
+    "tasks": {
+      "task_1": {
+        "id": "task_1",
+        "title": "Prepare Q3 Marketing Review slides",
+        "priority": "high",
+        "category": "work",
+        "completed": false
+      },
+      "task_2": {
+        "id": "task_2",
+        "title": "Grocery & Pantry Restock (Checklist)",
+        "priority": "medium",
+        "category": "checklist",
+        "completed": false
+      },
+      "task_3": {
+        "id": "task_3",
+        "title": "Call dental clinic to reschedule cleaning",
+        "priority": "low",
+        "category": "personal",
+        "completed": false
+      },
+      "task_4": {
+        "id": "task_4",
+        "title": "Daily 15-Minute Morning Mobility Stretch",
+        "priority": "medium",
+        "category": "checklist",
+        "completed": true
+      }
+    },
+    "subtasks": {
+      "sub_1": {
+        "completed": true
+      },
+      "sub_2": {
+        "completed": true
+      },
+      "sub_3": {
+        "completed": false
+      }
+    },
+    "title": "",
+    "priority": "medium",
+    "category": "task",
+    "completed": true
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I can build an interactive web app for you. What would you like to create?"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what I plan to build for **TaskFlow Daily**:\n\nI will build a sleek and intuitive todo application designed to help you organize and conquer your daily goals effortlessly. You'll be able to create, prioritize, filter, and track your tasks with real-time progress updates and satisfying interactions.\n\n**Key features:**\n\u2022 Quick Task Creation & Prioritization: Add tasks with priority levels (Low, Medium, High), due dates, and custom category tags.\n\u2022 Dynamic Progress Dashboard: Interactive progress ring and streak counter showing completed versus pending tasks in real-time.\n\u2022 Categorized Filtering & Search: Filter by All, Active, Completed, or tag categories with an instant live search bar.\n\u2022 Interactive Task Actions: Smooth swipe-to-delete, inline status toggling with celebratory completion animations, and task editing.\n\nPlease review the plan below and tap **Confirm & Build App** when ready!"
+    },
+    {
+      "role": "user",
+      "content": "[Adjustment: create checklist also]"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: Confirmed Plan for 'TaskFlow Daily': I will build a sleek and intuitive todo application designed to help you organize and conquer your daily goals effortlessly. You'll be able to create, prioritize, filter, and track your tasks with real-time progress updates and satisfying interactions.\n- q_key_features: build todo app\n- user_adjustment: create checklist also]"
+    },
+    {
+      "role": "assistant",
+      "content": "I have built TaskFlow Daily with integrated checklist functionality. You can quickly add priority-tagged tasks, organize quick checklists, filter by status, and track your daily completion progress in real-time."
+    }
+  ]
+}

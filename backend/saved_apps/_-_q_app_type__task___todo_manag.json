@@ -1,0 +1,80 @@
+{
+  "id": "_-_q_app_type__task___todo_manag",
+  "name": "(- Q_App_Type: Task_&_Todo_Manag",
+  "updated_at": "2026-10-23T07:27:12.358708",
+  "component_count": 1,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "{'id': 'header_card', 'component': 'Card', 'children': [{'id': 'header_row', 'component': 'Row', 'children': [{'id': 'header_col', 'component': 'Column', 'children': [{'id': 'app_title', 'component': 'Text', 'text': 'TaskFlow', 'usageHint': 'h1'}, {'id': 'app_subtitle', 'component': 'Text', 'text': 'Organize your workflow, track priorities, and get things done.', 'usageHint': 'caption'}]}]}]}",
+          "{'id': 'stats_row', 'component': 'Row', 'children': [{'id': 'stat_card_pending', 'component': 'Card', 'children': [{'id': 'stat_pending_label', 'component': 'Text', 'text': 'Pending', 'usageHint': 'caption'}, {'id': 'stat_pending_val', 'component': 'Text', 'text': '3 Tasks', 'usageHint': 'h2'}]}, {'id': 'stat_card_inprogress', 'component': 'Card', 'children': [{'id': 'stat_inprogress_label', 'component': 'Text', 'text': 'In Progress', 'usageHint': 'caption'}, {'id': 'stat_inprogress_val', 'component': 'Text', 'text': '2 Tasks', 'usageHint': 'h2'}]}, {'id': 'stat_card_completed', 'component': 'Card', 'children': [{'id': 'stat_completed_label', 'component': 'Text', 'text': 'Completed', 'usageHint': 'caption'}, {'id': 'stat_completed_val', 'component': 'Text', 'text': '5 Done', 'usageHint': 'h2'}]}]}",
+          "{'id': 'new_task_card', 'component': 'Card', 'children': [{'id': 'new_task_heading', 'component': 'Text', 'text': 'Create New Task', 'usageHint': 'h2'}, {'id': 'new_task_title', 'component': 'TextField', 'label': 'Task Title', 'placeholder': 'e.g., Prepare quarterly roadmap review', 'value': {'path': '/newTask/title'}}, {'id': 'new_task_selectors_row', 'component': 'Row', 'children': [{'id': 'new_task_priority', 'component': 'ChoicePicker', 'label': 'Priority Level', 'options': [{'label': 'Low', 'value': 'low'}, {'label': 'Medium', 'value': 'medium'}, {'label': 'High', 'value': 'high'}, {'label': 'Urgent', 'value': 'urgent'}], 'value': {'path': '/newTask/priority'}}, {'id': 'new_task_category', 'component': 'ChoicePicker', 'label': 'Category', 'options': [{'label': 'Work', 'value': 'work'}, {'label': 'Personal', 'value': 'personal'}, {'label': 'Health', 'value': 'health'}, {'label': 'Learning', 'value': 'learning'}], 'value': {'path': '/newTask/category'}}]}, {'id': 'new_task_effort', 'component': 'Slider', 'label': 'Estimated Effort (Hours)', 'min': 1, 'max': 8, 'value': {'path': '/newTask/estimatedHours'}}, {'id': 'new_task_button_row', 'component': 'Row', 'children': [{'id': 'create_task_btn', 'component': 'Button', 'text': 'Add Task', 'action': {'name': 'create_task', 'contextPath': '/newTask'}}, {'id': 'clear_task_btn', 'component': 'Button', 'text': 'Clear Fields', 'action': {'name': 'clear_form', 'contextPath': '/newTask'}}]}]}",
+          "{'id': 'filter_card', 'component': 'Card', 'children': [{'id': 'filter_row', 'component': 'Row', 'children': [{'id': 'status_filter', 'component': 'ChoicePicker', 'label': 'Filter by Status', 'options': [{'label': 'All', 'value': 'all'}, {'label': 'Pending', 'value': 'pending'}, {'label': 'In Progress', 'value': 'in_progress'}, {'label': 'Completed', 'value': 'completed'}], 'value': {'path': '/filter/status'}}, {'id': 'category_filter', 'component': 'ChoicePicker', 'label': 'Filter by Category', 'options': [{'label': 'All', 'value': 'all'}, {'label': 'Work', 'value': 'work'}, {'label': 'Personal', 'value': 'personal'}, {'label': 'Health', 'value': 'health'}, {'label': 'Learning', 'value': 'learning'}], 'value': {'path': '/filter/category'}}]}]}",
+          "{'id': 'task_list_heading', 'component': 'Text', 'text': 'Current Tasks', 'usageHint': 'h2'}",
+          "{'id': 'task_item_1', 'component': 'Card', 'children': [{'id': 'task_1_row', 'component': 'Row', 'children': [{'id': 'task_1_info', 'component': 'Column', 'children': [{'id': 'task_1_title', 'component': 'Text', 'text': 'Finalize Q3 Budget Proposal', 'usageHint': 'h2'}, {'id': 'task_1_meta', 'component': 'Text', 'text': 'Category: Work | Priority: Urgent | Effort: 4h | Status: In Progress', 'usageHint': 'caption'}]}]}, {'id': 'task_1_divider', 'component': 'Divider'}, {'id': 'task_1_actions', 'component': 'Row', 'children': [{'id': 'task_1_complete_btn', 'component': 'Button', 'text': 'Mark as Done', 'action': {'name': 'set_task_status', 'contextPath': '/tasks/0'}}, {'id': 'task_1_pending_btn', 'component': 'Button', 'text': 'Pause / Set Pending', 'action': {'name': 'pause_task', 'contextPath': '/tasks/0'}}]}]}",
+          "{'id': 'task_item_2', 'component': 'Card', 'children': [{'id': 'task_2_row', 'component': 'Row', 'children': [{'id': 'task_2_info', 'component': 'Column', 'children': [{'id': 'task_2_title', 'component': 'Text', 'text': 'Review System Architecture Diagram', 'usageHint': 'h2'}, {'id': 'task_2_meta', 'component': 'Text', 'text': 'Category: Work | Priority: High | Effort: 2h | Status: Pending', 'usageHint': 'caption'}]}]}, {'id': 'task_2_divider', 'component': 'Divider'}, {'id': 'task_2_actions', 'component': 'Row', 'children': [{'id': 'task_2_start_btn', 'component': 'Button', 'text': 'Start Task', 'action': {'name': 'start_task', 'contextPath': '/tasks/1'}}, {'id': 'task_2_complete_btn', 'component': 'Button', 'text': 'Mark as Done', 'action': {'name': 'set_task_status', 'contextPath': '/tasks/1'}}]}]}",
+          "{'id': 'task_item_3', 'component': 'Card', 'children': [{'id': 'task_3_row', 'component': 'Row', 'children': [{'id': 'task_3_info', 'component': 'Column', 'children': [{'id': 'task_3_title', 'component': 'Text', 'text': 'Daily 30-Minute Cardiovascular Workout', 'usageHint': 'h2'}, {'id': 'task_3_meta', 'component': 'Text', 'text': 'Category: Health | Priority: Medium | Effort: 1h | Status: Completed', 'usageHint': 'caption'}]}]}, {'id': 'task_3_divider', 'component': 'Divider'}, {'id': 'task_3_actions', 'component': 'Row', 'children': [{'id': 'task_3_reopen_btn', 'component': 'Button', 'text': 'Re-open Task', 'action': {'name': 'reopen_task', 'contextPath': '/tasks/2'}}]}]}"
+        ]
+      }
+    }
+  ],
+  "data": {
+    "newTask": {
+      "title": "",
+      "priority": "medium",
+      "category": "work",
+      "estimatedHours": 2
+    },
+    "filter": {
+      "status": "all",
+      "category": "all"
+    },
+    "tasks": [
+      {
+        "id": "task-01",
+        "title": "Finalize Q3 Budget Proposal",
+        "priority": "urgent",
+        "category": "work",
+        "status": "in_progress",
+        "estimatedHours": 4
+      },
+      {
+        "id": "task-02",
+        "title": "Review System Architecture Diagram",
+        "priority": "high",
+        "category": "work",
+        "status": "pending",
+        "estimatedHours": 2
+      },
+      {
+        "id": "task-03",
+        "title": "Daily 30-Minute Cardiovascular Workout",
+        "priority": "medium",
+        "category": "health",
+        "status": "completed",
+        "estimatedHours": 1
+      }
+    ]
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: task_&_todo_manager\n- q_key_features: hi]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've created TaskFlow, a comprehensive task and to-do management application. It features a quick task creation form with category, priority, and effort sliders, task category filters, status overviews, and interactive task cards with status update actions."
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: task_&_todo_manager\n- q_key_features: hi]"
+    },
+    {
+      "role": "assistant",
+      "content": "I have created TaskFlow, an interactive task and to-do management application. It includes quick task entry with priority, category, and effort hours, progress statistics, view filtering, and interactive task cards with status controls."
+    }
+  ]
+}

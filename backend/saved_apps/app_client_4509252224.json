@@ -1,0 +1,826 @@
+{
+  "id": "app_client_4509252224",
+  "name": "TaskPulse: Priority To-Do Hub",
+  "updated_at": "2026-10-23T08:53:42.892958",
+  "component_count": 71,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "stats_card",
+          "filter_card",
+          "add_task_card",
+          "tasks_section_title",
+          "task_card_1",
+          "task_card_2",
+          "task_card_3",
+          "task_card_4",
+          "progress_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_row"
+        ]
+      }
+    },
+    {
+      "id": "header_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "header_col_text",
+          "clear_completed_btn"
+        ]
+      }
+    },
+    {
+      "id": "header_col_text",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "app_title",
+          "app_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "app_title",
+      "component": "Text",
+      "text": {
+        "literalString": "TaskPulse"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "app_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority-focused task manager & daily tracker"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "clear_completed_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Clear Completed"
+      },
+      "action": {
+        "name": "clear_completed",
+        "contextPath": "/tasks"
+      }
+    },
+    {
+      "id": "stats_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "stats_row"
+        ]
+      }
+    },
+    {
+      "id": "stats_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "stat_total_col",
+          "stat_pending_col",
+          "stat_high_col",
+          "stat_completed_col"
+        ]
+      }
+    },
+    {
+      "id": "stat_total_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_total_num",
+          "stat_total_lbl"
+        ]
+      }
+    },
+    {
+      "id": "stat_total_num",
+      "component": "Text",
+      "text": {
+        "literalString": "4"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_total_lbl",
+      "component": "Text",
+      "text": {
+        "literalString": "Total Tasks"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_pending_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_pending_num",
+          "stat_pending_lbl"
+        ]
+      }
+    },
+    {
+      "id": "stat_pending_num",
+      "component": "Text",
+      "text": {
+        "literalString": "3"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_pending_lbl",
+      "component": "Text",
+      "text": {
+        "literalString": "Pending"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_high_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_high_num",
+          "stat_high_lbl"
+        ]
+      }
+    },
+    {
+      "id": "stat_high_num",
+      "component": "Text",
+      "text": {
+        "literalString": "2"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_high_lbl",
+      "component": "Text",
+      "text": {
+        "literalString": "High Priority"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "stat_completed_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "stat_completed_num",
+          "stat_completed_lbl"
+        ]
+      }
+    },
+    {
+      "id": "stat_completed_num",
+      "component": "Text",
+      "text": {
+        "literalString": "1"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "stat_completed_lbl",
+      "component": "Text",
+      "text": {
+        "literalString": "Done"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "filter_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "filter_title",
+          "filter_row"
+        ]
+      }
+    },
+    {
+      "id": "filter_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Filter View"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "filter_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "filter_priority_picker",
+          "filter_status_picker"
+        ]
+      }
+    },
+    {
+      "id": "filter_priority_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Priority Filter"
+      },
+      "value": {
+        "path": "/filters/priority"
+      },
+      "options": [
+        {
+          "label": "All Priorities",
+          "value": "all"
+        },
+        {
+          "label": "High Only",
+          "value": "high"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Low",
+          "value": "low"
+        }
+      ]
+    },
+    {
+      "id": "filter_status_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Status"
+      },
+      "value": {
+        "path": "/filters/status"
+      },
+      "options": [
+        {
+          "label": "All",
+          "value": "all"
+        },
+        {
+          "label": "Active",
+          "value": "active"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "id": "add_task_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "add_task_header",
+          "new_task_input",
+          "add_task_options_row",
+          "add_task_submit_btn"
+        ]
+      }
+    },
+    {
+      "id": "add_task_header",
+      "component": "Text",
+      "text": {
+        "literalString": "Add New Task"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "new_task_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "Task Description"
+      },
+      "value": {
+        "path": "/newTask/title"
+      },
+      "placeholder": "What needs to be done?"
+    },
+    {
+      "id": "add_task_options_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "new_priority_picker",
+          "new_due_picker",
+          "new_category_picker"
+        ]
+      }
+    },
+    {
+      "id": "new_priority_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Priority Level"
+      },
+      "value": {
+        "path": "/newTask/priority"
+      },
+      "options": [
+        {
+          "label": "High",
+          "value": "High"
+        },
+        {
+          "label": "Medium",
+          "value": "Medium"
+        },
+        {
+          "label": "Low",
+          "value": "Low"
+        }
+      ]
+    },
+    {
+      "id": "new_due_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Due Date"
+      },
+      "value": {
+        "path": "/newTask/dueDate"
+      },
+      "options": [
+        {
+          "label": "Today",
+          "value": "Today"
+        },
+        {
+          "label": "Tomorrow",
+          "value": "Tomorrow"
+        },
+        {
+          "label": "This Week",
+          "value": "This Week"
+        }
+      ]
+    },
+    {
+      "id": "new_category_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Category"
+      },
+      "value": {
+        "path": "/newTask/category"
+      },
+      "options": [
+        {
+          "label": "Work",
+          "value": "Work"
+        },
+        {
+          "label": "Personal",
+          "value": "Personal"
+        },
+        {
+          "label": "Finance",
+          "value": "Finance"
+        }
+      ]
+    },
+    {
+      "id": "add_task_submit_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "+ Create Task"
+      },
+      "action": {
+        "name": "add_task",
+        "contextPath": "/newTask"
+      }
+    },
+    {
+      "id": "tasks_section_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Your Action Items"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "task_card_1",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_row_1",
+          "task_details_row_1"
+        ]
+      }
+    },
+    {
+      "id": "task_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_title_1",
+          "task_toggle_btn_1"
+        ]
+      }
+    },
+    {
+      "id": "task_title_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Finalize Q3 Performance Review Slides"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_toggle_btn_1",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/0"
+      }
+    },
+    {
+      "id": "task_details_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_priority_1",
+          "task_due_1",
+          "task_cat_1"
+        ]
+      }
+    },
+    {
+      "id": "task_priority_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: HIGH"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_due_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Due: Today (Urgent)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_cat_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Work"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_card_2",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_row_2",
+          "task_details_row_2"
+        ]
+      }
+    },
+    {
+      "id": "task_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_title_2",
+          "task_toggle_btn_2"
+        ]
+      }
+    },
+    {
+      "id": "task_title_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Submit Cloud Server Hosting Invoice"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_toggle_btn_2",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/1"
+      }
+    },
+    {
+      "id": "task_details_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_priority_2",
+          "task_due_2",
+          "task_cat_2"
+        ]
+      }
+    },
+    {
+      "id": "task_priority_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: HIGH"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_due_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Due: Today"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_cat_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Finance"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_card_3",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_row_3",
+          "task_details_row_3"
+        ]
+      }
+    },
+    {
+      "id": "task_row_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_title_3",
+          "task_toggle_btn_3"
+        ]
+      }
+    },
+    {
+      "id": "task_title_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Update Client Wireframes & Design System"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_toggle_btn_3",
+      "component": "Button",
+      "text": {
+        "literalString": "Mark Done"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/2"
+      }
+    },
+    {
+      "id": "task_details_row_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_priority_3",
+          "task_due_3",
+          "task_cat_3"
+        ]
+      }
+    },
+    {
+      "id": "task_priority_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: MEDIUM"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_due_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Due: Tomorrow"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_cat_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Work"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_card_4",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "task_row_4",
+          "task_details_row_4"
+        ]
+      }
+    },
+    {
+      "id": "task_row_4",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_title_4",
+          "task_toggle_btn_4"
+        ]
+      }
+    },
+    {
+      "id": "task_title_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Archive Weekly Standup Notes & Inbox Zero"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "task_toggle_btn_4",
+      "component": "Button",
+      "text": {
+        "literalString": "Completed"
+      },
+      "action": {
+        "name": "toggle_task",
+        "contextPath": "/tasks/3"
+      }
+    },
+    {
+      "id": "task_details_row_4",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "task_priority_4",
+          "task_due_4",
+          "task_cat_4"
+        ]
+      }
+    },
+    {
+      "id": "task_priority_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Priority: LOW"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_due_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Status: Finished"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "task_cat_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Personal"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "progress_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "progress_title",
+          "daily_goal_slider",
+          "progress_caption"
+        ]
+      }
+    },
+    {
+      "id": "progress_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Daily Productivity Target"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "daily_goal_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Completion Target (%):"
+      },
+      "value": {
+        "path": "/productivity/targetPercent"
+      },
+      "min": 0.0,
+      "max": 100.0
+    },
+    {
+      "id": "progress_caption",
+      "component": "Text",
+      "text": {
+        "literalString": "Adjust your target to maintain focus throughout your working session."
+      },
+      "usageHint": "caption"
+    }
+  ],
+  "data": {
+    "filters": {
+      "priority": "all",
+      "status": "all"
+    },
+    "newTask": {
+      "title": "",
+      "priority": "High",
+      "dueDate": "Today",
+      "category": "Work"
+    },
+    "productivity": {
+      "targetPercent": 75
+    },
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Finalize Q3 Performance Review Slides",
+        "priority": "High",
+        "due": "Today",
+        "category": "Work",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Submit Cloud Server Hosting Invoice",
+        "priority": "High",
+        "due": "Today",
+        "category": "Finance",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "title": "Update Client Wireframes & Design System",
+        "priority": "Medium",
+        "due": "Tomorrow",
+        "category": "Work",
+        "completed": false
+      },
+      {
+        "id": 4,
+        "title": "Archive Weekly Standup Notes & Inbox Zero",
+        "priority": "Low",
+        "due": "Completed",
+        "category": "Personal",
+        "completed": true
+      }
+    ]
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "build me an app"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd love to build an app for you! To create the best experience, please let me know what kind of app you have in mind."
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what I plan to build for **TaskPulse: Priority To-Do Hub**:\n\nI am building a streamlined Flutter task manager designed to help you organize daily responsibilities with ease and clarity. It gives you interactive task checklists alongside intuitive priority labeling and due date tracking to keep your days completely focused.\n\n**Key features:**\n\u2022 Interactive Task Checklist: Quick-toggle checkboxes with dynamic strike-through styling and completion metrics.\n\u2022 Color-Coded Priority Tags: High, Medium, and Low visual badges allowing effortless filtering and sorting of urgent items.\n\u2022 Due Date Scheduling: Integrated date picker with relative deadline badges showing overdue and upcoming tasks.\n\u2022 Quick-Add Task Modal: Responsive bottom sheet enabling rapid entry of task titles, priorities, and deadlines.\n\nPlease review the plan below and tap **Confirm & Build App** when ready!"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: Confirmed Plan for 'TaskPulse: Priority To-Do Hub': I am building a streamlined Flutter task manager designed to help you organize daily responsibilities with ease and clarity. It gives you interactive task checklists alongside intuitive priority labeling and due date tracking to keep your days completely focused.\n- q_app_type: Task & To-Do Manager\n- q_features: Priority tags, due dates, task checklist]"
+    },
+    {
+      "role": "assistant",
+      "content": "I have built TaskPulse: Priority To-Do Hub, equipped with priority-tagged task cards, quick-add task creation, priority and status filtering controls, and a daily productivity completion tracker."
+    }
+  ]
+}

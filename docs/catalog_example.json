@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "catalogId": "https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json",
+  "name": "A2UI Basic Component Catalog Example",
+  "stream_example": [
+    {
+      "version": "v0.9",
+      "createSurface": {
+        "surfaceId": "flight_details_surface",
+        "catalogId": "https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"
+      }
+    },
+    {
+      "version": "v0.9",
+      "updateComponents": {
+        "surfaceId": "flight_details_surface",
+        "components": [
+          {
+            "id": "root",
+            "component": "Column",
+            "children": {
+              "explicitList": ["card_container"]
+            }
+          },
+          {
+            "id": "card_container",
+            "component": "Card",
+            "children": {
+              "explicitList": ["flight_header", "flight_route", "flight_price", "confirm_action"]
+            }
+          },
+          {
+            "id": "flight_header",
+            "component": "Text",
+            "text": {
+              "path": "/flight/airline"
+            },
+            "usageHint": "h1"
+          },
+          {
+            "id": "flight_route",
+            "component": "Text",
+            "text": {
+              "path": "/flight/route"
+            },
+            "usageHint": "body"
+          },
+          {
+            "id": "flight_price",
+            "component": "Text",
+            "text": {
+              "path": "/flight/fare"
+            },
+            "usageHint": "caption"
+          },
+          {
+            "id": "confirm_action",
+            "component": "Button",
+            "text": {
+              "literalString": "Book Flight"
+            },
+            "action": {
+              "name": "book_flight_ticket",
+              "contextPath": "/flight"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "version": "v0.9",
+      "updateDataModel": {
+        "surfaceId": "flight_details_surface",
+        "path": "/",
+        "value": {
+          "flight": {
+            "flightNumber": "AI-102",
+            "airline": "Skyline Airways",
+            "route": "SFO → JFK • Departs 08:30 AM",
+            "fare": "$340 Non-stop Economy"
+          }
+        }
+      }
+    }
+  ]
+}

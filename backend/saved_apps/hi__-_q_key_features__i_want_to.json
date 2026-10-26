@@ -1,0 +1,672 @@
+{
+  "id": "hi__-_q_key_features__i_want_to",
+  "name": "Hi (- Q_Key_Features: I Want To",
+  "updated_at": "2026-10-23T08:44:29.381417",
+  "component_count": 62,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "metrics_row",
+          "add_expense_card",
+          "budget_settings_card",
+          "recent_transactions_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_col"
+        ]
+      }
+    },
+    {
+      "id": "header_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_title",
+          "header_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "header_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Personal Expense Tracker"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "header_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Monitor your monthly budget, record expenses, and stay on top of your finances."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "metrics_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "spent_card",
+          "budget_card",
+          "remaining_card"
+        ]
+      }
+    },
+    {
+      "id": "spent_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "spent_col"
+        ]
+      }
+    },
+    {
+      "id": "spent_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "spent_label",
+          "spent_val"
+        ]
+      }
+    },
+    {
+      "id": "spent_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Total Spent"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "spent_val",
+      "component": "Text",
+      "text": {
+        "literalString": "$1,420.50"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "budget_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "budget_col"
+        ]
+      }
+    },
+    {
+      "id": "budget_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "budget_label",
+          "budget_val"
+        ]
+      }
+    },
+    {
+      "id": "budget_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Monthly Target"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "budget_val",
+      "component": "Text",
+      "text": {
+        "literalString": "$2,500.00"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "remaining_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "remaining_col"
+        ]
+      }
+    },
+    {
+      "id": "remaining_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "remaining_label",
+          "remaining_val"
+        ]
+      }
+    },
+    {
+      "id": "remaining_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Remaining Safe to Spend"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "remaining_val",
+      "component": "Text",
+      "text": {
+        "literalString": "$1,079.50"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "add_expense_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "add_expense_col"
+        ]
+      }
+    },
+    {
+      "id": "add_expense_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "add_expense_heading",
+          "input_row_1",
+          "input_row_2",
+          "btn_add_expense"
+        ]
+      }
+    },
+    {
+      "id": "add_expense_heading",
+      "component": "Text",
+      "text": {
+        "literalString": "Add New Expense"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "input_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "input_title",
+          "input_amount"
+        ]
+      }
+    },
+    {
+      "id": "input_title",
+      "component": "TextField",
+      "label": {
+        "literalString": "Expense Description"
+      },
+      "value": {
+        "path": "/newExpense/title"
+      },
+      "placeholder": "e.g. Grocery store run, Gas, Dinner"
+    },
+    {
+      "id": "input_amount",
+      "component": "TextField",
+      "label": {
+        "literalString": "Amount ($)"
+      },
+      "value": {
+        "path": "/newExpense/amount"
+      },
+      "placeholder": "0.00"
+    },
+    {
+      "id": "input_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "input_category",
+          "input_payment_method"
+        ]
+      }
+    },
+    {
+      "id": "input_category",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Category"
+      },
+      "value": {
+        "path": "/newExpense/category"
+      },
+      "options": [
+        {
+          "label": "Food & Dining",
+          "value": "food"
+        },
+        {
+          "label": "Groceries",
+          "value": "groceries"
+        },
+        {
+          "label": "Transportation",
+          "value": "transport"
+        },
+        {
+          "label": "Utilities & Bills",
+          "value": "utilities"
+        },
+        {
+          "label": "Entertainment",
+          "value": "entertainment"
+        },
+        {
+          "label": "Shopping",
+          "value": "shopping"
+        }
+      ]
+    },
+    {
+      "id": "input_payment_method",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Payment Method"
+      },
+      "value": {
+        "path": "/newExpense/paymentMethod"
+      },
+      "options": [
+        {
+          "label": "Credit Card",
+          "value": "credit"
+        },
+        {
+          "label": "Debit Card",
+          "value": "debit"
+        },
+        {
+          "label": "Cash",
+          "value": "cash"
+        },
+        {
+          "label": "Bank Transfer",
+          "value": "transfer"
+        }
+      ]
+    },
+    {
+      "id": "btn_add_expense",
+      "component": "Button",
+      "text": {
+        "literalString": "Record Expense"
+      },
+      "action": {
+        "name": "addExpense",
+        "contextPath": "/newExpense"
+      }
+    },
+    {
+      "id": "budget_settings_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "budget_settings_col"
+        ]
+      }
+    },
+    {
+      "id": "budget_settings_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "budget_settings_title",
+          "budget_slider",
+          "divider_1",
+          "quick_filter_row"
+        ]
+      }
+    },
+    {
+      "id": "budget_settings_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Monthly Budget Limit Adjustment ($)"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "budget_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Adjust Monthly Cap ($500 - $5,000)"
+      },
+      "value": {
+        "path": "/settings/monthlyBudget"
+      },
+      "min": 500.0,
+      "max": 5000.0
+    },
+    {
+      "id": "divider_1",
+      "component": "Divider"
+    },
+    {
+      "id": "quick_filter_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "filter_label",
+          "filter_picker"
+        ]
+      }
+    },
+    {
+      "id": "filter_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Filter View by Category:"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "filter_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "View Filter"
+      },
+      "value": {
+        "path": "/settings/activeFilter"
+      },
+      "options": [
+        {
+          "label": "All Categories",
+          "value": "all"
+        },
+        {
+          "label": "Food & Dining",
+          "value": "food"
+        },
+        {
+          "label": "Groceries",
+          "value": "groceries"
+        },
+        {
+          "label": "Transportation",
+          "value": "transport"
+        },
+        {
+          "label": "Utilities & Bills",
+          "value": "utilities"
+        },
+        {
+          "label": "Entertainment",
+          "value": "entertainment"
+        }
+      ]
+    },
+    {
+      "id": "recent_transactions_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "recent_col"
+        ]
+      }
+    },
+    {
+      "id": "recent_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "recent_title",
+          "tx_row_1",
+          "tx_divider_1",
+          "tx_row_2",
+          "tx_divider_2",
+          "tx_row_3",
+          "tx_divider_3",
+          "tx_row_4"
+        ]
+      }
+    },
+    {
+      "id": "recent_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Recent Transactions"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "tx_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "tx_info_1",
+          "tx_amount_1"
+        ]
+      }
+    },
+    {
+      "id": "tx_info_1",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "tx_name_1",
+          "tx_meta_1"
+        ]
+      }
+    },
+    {
+      "id": "tx_name_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Whole Foods Market"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_meta_1",
+      "component": "Text",
+      "text": {
+        "literalString": "Groceries \u2022 Today \u2022 Credit Card"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "tx_amount_1",
+      "component": "Text",
+      "text": {
+        "literalString": "-$84.20"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_divider_1",
+      "component": "Divider"
+    },
+    {
+      "id": "tx_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "tx_info_2",
+          "tx_amount_2"
+        ]
+      }
+    },
+    {
+      "id": "tx_info_2",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "tx_name_2",
+          "tx_meta_2"
+        ]
+      }
+    },
+    {
+      "id": "tx_name_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Metro Transit Monthly Pass"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_meta_2",
+      "component": "Text",
+      "text": {
+        "literalString": "Transportation \u2022 Yesterday \u2022 Debit Card"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "tx_amount_2",
+      "component": "Text",
+      "text": {
+        "literalString": "-$65.00"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_divider_2",
+      "component": "Divider"
+    },
+    {
+      "id": "tx_row_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "tx_info_3",
+          "tx_amount_3"
+        ]
+      }
+    },
+    {
+      "id": "tx_info_3",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "tx_name_3",
+          "tx_meta_3"
+        ]
+      }
+    },
+    {
+      "id": "tx_name_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Electric & Internet Bill"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_meta_3",
+      "component": "Text",
+      "text": {
+        "literalString": "Utilities & Bills \u2022 May 28 \u2022 Bank Transfer"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "tx_amount_3",
+      "component": "Text",
+      "text": {
+        "literalString": "-$142.30"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_divider_3",
+      "component": "Divider"
+    },
+    {
+      "id": "tx_row_4",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "tx_info_4",
+          "tx_amount_4"
+        ]
+      }
+    },
+    {
+      "id": "tx_info_4",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "tx_name_4",
+          "tx_meta_4"
+        ]
+      }
+    },
+    {
+      "id": "tx_name_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Blue Bottle Coffee"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "tx_meta_4",
+      "component": "Text",
+      "text": {
+        "literalString": "Food & Dining \u2022 May 27 \u2022 Cash"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "tx_amount_4",
+      "component": "Text",
+      "text": {
+        "literalString": "-$12.50"
+      },
+      "usageHint": "body"
+    }
+  ],
+  "data": {
+    "newExpense": {
+      "title": "",
+      "amount": "",
+      "category": "food",
+      "paymentMethod": "credit"
+    },
+    "settings": {
+      "monthlyBudget": 2500,
+      "activeFilter": "all"
+    },
+    "title": "Chicken",
+    "amount": "80",
+    "category": "food",
+    "paymentMethod": "credit"
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I can build interactive web apps for you. What kind of application would you like to create today?"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_key_features: I want to build expense tracker]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've created an interactive Expense Tracker app for you. You can track your daily spending, set monthly budget goals, log new expenses with categories, and review your current balance and recent transactions."
+    }
+  ]
+}

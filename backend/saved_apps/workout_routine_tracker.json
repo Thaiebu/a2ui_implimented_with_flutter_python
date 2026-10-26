@@ -1,0 +1,132 @@
+{
+  "id": "workout_routine_tracker",
+  "name": "Workout Routine Tracker",
+  "updated_at": "2026-10-22T11:18:33.037638",
+  "component_count": 8,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "routine_card",
+          "rest_slider",
+          "difficulty_picker",
+          "log_btn"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83c\udfcb\ufe0f Pro Workout Routine"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "routine_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "exercise_title",
+          "sets_reps"
+        ]
+      }
+    },
+    {
+      "id": "exercise_title",
+      "component": "Text",
+      "text": {
+        "path": "/workout/exercise"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "sets_reps",
+      "component": "Text",
+      "text": {
+        "path": "/workout/details"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "rest_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Rest Timer (Seconds)"
+      },
+      "min": 30.0,
+      "max": 180.0,
+      "value": {
+        "path": "/workout/restTimer"
+      }
+    },
+    {
+      "id": "difficulty_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Intensity Level"
+      },
+      "options": [
+        {
+          "label": "\ud83d\udfe2 Warmup",
+          "value": "warmup"
+        },
+        {
+          "label": "\ud83d\udfe1 Moderate",
+          "value": "moderate"
+        },
+        {
+          "label": "\ud83d\udd34 Maximum Effort",
+          "value": "max"
+        }
+      ],
+      "value": {
+        "path": "/workout/intensity"
+      }
+    },
+    {
+      "id": "log_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Log Completed Set"
+      },
+      "action": {
+        "name": "log_set",
+        "contextPath": "/workout"
+      }
+    }
+  ],
+  "data": {
+    "workout": {
+      "exercise": "Barbell Bench Press",
+      "details": "Target: 4 Sets x 8-10 Reps \u2022 Heavy Compound",
+      "restTimer": 90,
+      "intensity": "moderate"
+    },
+    "exercise": "Barbell Bench Press",
+    "details": "Target: 4 Sets x 8-10 Reps \u2022 Heavy Compound",
+    "restTimer": 90,
+    "intensity": "warmup"
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "Build a workout tracker"
+    },
+    {
+      "role": "assistant",
+      "content": "Created your workout tracker!"
+    },
+    {
+      "role": "user",
+      "content": "Add rest slider and intensity picker"
+    },
+    {
+      "role": "assistant",
+      "content": "Added rest timer slider and intensity chips!"
+    }
+  ]
+}

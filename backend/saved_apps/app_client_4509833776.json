@@ -1,0 +1,1060 @@
+{
+  "id": "app_client_4509833776",
+  "name": "FSDS AssetTracker",
+  "updated_at": "2026-10-23T08:59:09.217077",
+  "component_count": 99,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "header_card",
+          "kpi_metrics_row",
+          "filter_controls_card",
+          "diff_inspector_card",
+          "asset_matrix_card",
+          "export_actions_card"
+        ]
+      }
+    },
+    {
+      "id": "header_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "header_row",
+          "header_subtitle"
+        ]
+      }
+    },
+    {
+      "id": "header_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "header_title_col",
+          "header_status_col"
+        ]
+      }
+    },
+    {
+      "id": "header_title_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "app_title",
+          "app_badge"
+        ]
+      }
+    },
+    {
+      "id": "app_title",
+      "component": "Text",
+      "text": {
+        "literalString": "FSDS AssetTracker"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "app_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "FSDS Design System \u00b7 v4.18.0 Core \u00b7 Visual Governance Suite"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "header_status_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "pipeline_status_text",
+          "sync_button"
+        ]
+      }
+    },
+    {
+      "id": "pipeline_status_text",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udfe2 Storybook Pipeline: Synced (14 mins ago)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "sync_button",
+      "component": "Button",
+      "text": {
+        "literalString": "Re-run Visual Audit"
+      },
+      "action": {
+        "name": "trigger_audit",
+        "contextPath": "/governance"
+      }
+    },
+    {
+      "id": "header_subtitle",
+      "component": "Text",
+      "text": {
+        "literalString": "Audit visual coverage, inspect responsive snapshot variants, and govern image fidelity across all FSDS production libraries."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "kpi_metrics_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "kpi_card_coverage",
+          "kpi_card_health",
+          "kpi_card_optimization",
+          "kpi_card_diffs"
+        ]
+      }
+    },
+    {
+      "id": "kpi_card_coverage",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "kpi_cov_label",
+          "kpi_cov_value",
+          "kpi_cov_desc"
+        ]
+      }
+    },
+    {
+      "id": "kpi_cov_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Visual Coverage"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_cov_value",
+      "component": "Text",
+      "text": {
+        "literalString": "94.2%"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "kpi_cov_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "142 of 151 components rendered"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_card_health",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "kpi_health_label",
+          "kpi_health_value",
+          "kpi_health_desc"
+        ]
+      }
+    },
+    {
+      "id": "kpi_health_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Asset Health Alerts"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_health_value",
+      "component": "Text",
+      "text": {
+        "literalString": "5 Items"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "kpi_health_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "3 missing previews, 2 stale hashes"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_card_optimization",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "kpi_opt_label",
+          "kpi_opt_value",
+          "kpi_opt_desc"
+        ]
+      }
+    },
+    {
+      "id": "kpi_opt_label",
+      "component": "Text",
+      "text": {
+        "literalString": "WebP/AVIF Ratio"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_opt_value",
+      "component": "Text",
+      "text": {
+        "literalString": "98.1%"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "kpi_opt_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Average CDN payload 18.4 KB"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_card_diffs",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "kpi_diffs_label",
+          "kpi_diffs_value",
+          "kpi_diffs_desc"
+        ]
+      }
+    },
+    {
+      "id": "kpi_diffs_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Pending Diffs (v4.18)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "kpi_diffs_value",
+      "component": "Text",
+      "text": {
+        "literalString": "4 Awaiting Review"
+      },
+      "usageHint": "h1"
+    },
+    {
+      "id": "kpi_diffs_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Button, Card, DataGrid, Combobox"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "filter_controls_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "filter_title",
+          "filter_fields_row",
+          "filter_search_row"
+        ]
+      }
+    },
+    {
+      "id": "filter_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Library Filter & Audit Criteria"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "filter_fields_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "package_selector",
+          "theme_selector",
+          "status_selector"
+        ]
+      }
+    },
+    {
+      "id": "package_selector",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "FSDS Package Tier"
+      },
+      "value": {
+        "path": "/filters/selected_package"
+      },
+      "options": [
+        {
+          "label": "All Packages (6)",
+          "value": "all"
+        },
+        {
+          "label": "@fsds/react-core",
+          "value": "core"
+        },
+        {
+          "label": "@fsds/navigation",
+          "value": "nav"
+        },
+        {
+          "label": "@fsds/data-grid",
+          "value": "grid"
+        },
+        {
+          "label": "@fsds/inputs",
+          "value": "inputs"
+        }
+      ]
+    },
+    {
+      "id": "theme_selector",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Visual Theme Mode"
+      },
+      "value": {
+        "path": "/filters/selected_theme"
+      },
+      "options": [
+        {
+          "label": "Light & Dark Combined",
+          "value": "both"
+        },
+        {
+          "label": "Default Light",
+          "value": "light"
+        },
+        {
+          "label": "Dark Mode",
+          "value": "dark"
+        },
+        {
+          "label": "High Contrast WCAG AAA",
+          "value": "high_contrast"
+        }
+      ]
+    },
+    {
+      "id": "status_selector",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Audit Health Status"
+      },
+      "value": {
+        "path": "/filters/selected_status"
+      },
+      "options": [
+        {
+          "label": "All Assets",
+          "value": "all"
+        },
+        {
+          "label": "Needs Update / Stale",
+          "value": "stale"
+        },
+        {
+          "label": "Missing Snapshot",
+          "value": "missing"
+        },
+        {
+          "label": "Verified & Optimized",
+          "value": "healthy"
+        }
+      ]
+    },
+    {
+      "id": "filter_search_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "search_input",
+          "search_action_button"
+        ]
+      }
+    },
+    {
+      "id": "search_input",
+      "component": "TextField",
+      "label": {
+        "literalString": "Search Component or Asset Tag"
+      },
+      "value": {
+        "path": "/filters/search_query"
+      },
+      "placeholder": "e.g. Button, Dialog, --fsds-elevation, responsive-nav"
+    },
+    {
+      "id": "search_action_button",
+      "component": "Button",
+      "text": {
+        "literalString": "Filter Matrix"
+      },
+      "action": {
+        "name": "apply_filters",
+        "contextPath": "/filters"
+      }
+    },
+    {
+      "id": "diff_inspector_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "diff_title",
+          "diff_description",
+          "diff_meta_row",
+          "diff_slider",
+          "diff_preview_card",
+          "diff_actions_row"
+        ]
+      }
+    },
+    {
+      "id": "diff_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Interactive Visual Diff: Button / Primary Variant"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "diff_description",
+      "component": "Text",
+      "text": {
+        "literalString": "Slide to compare the released baseline (v4.17.2) with the pending build (v4.18.0-candidate). Verified delta: token radius changed from 4px to 6px; hover elevation adjusted to Level 2."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "diff_meta_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "baseline_label",
+          "diff_ratio_label",
+          "candidate_label"
+        ]
+      }
+    },
+    {
+      "id": "baseline_label",
+      "component": "Text",
+      "text": {
+        "literalString": "\u25c0 0% Baseline (v4.17.2)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "diff_ratio_label",
+      "component": "Text",
+      "text": {
+        "literalString": "Diff Threshold: 0.14% pixel variance"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "candidate_label",
+      "component": "Text",
+      "text": {
+        "literalString": "100% Candidate (v4.18.0) \u25b6"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "diff_slider",
+      "component": "Slider",
+      "label": {
+        "literalString": "Diff Split Position (0% Baseline \u2190 \u2192 100% Candidate)"
+      },
+      "value": {
+        "path": "/diff/slider_position"
+      },
+      "min": 0.0,
+      "max": 100.0
+    },
+    {
+      "id": "diff_preview_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "diff_status_badge",
+          "diff_viewport_info",
+          "diff_tokens_affected"
+        ]
+      }
+    },
+    {
+      "id": "diff_status_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "Target: @fsds/react-core/src/Button/Button.primary.png (800x480 @2x Retina)"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "diff_viewport_info",
+      "component": "Text",
+      "text": {
+        "literalString": "Inspection View: 50% split applied. Baseline color token '#0F62FE' preserved. Hover state background transitioned to '#0353E9'."
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "diff_tokens_affected",
+      "component": "Text",
+      "text": {
+        "literalString": "Affected Design Tokens: --fsds-radius-button (4px -> 6px), --fsds-shadow-hover (0 4px 8px rgba(0,0,0,0.12))"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "diff_actions_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "approve_diff_btn",
+          "reject_diff_btn",
+          "re_render_btn"
+        ]
+      }
+    },
+    {
+      "id": "approve_diff_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Approve Visual Delta"
+      },
+      "action": {
+        "name": "approve_visual_delta",
+        "contextPath": "/diff/button_primary"
+      }
+    },
+    {
+      "id": "reject_diff_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Flag Regression"
+      },
+      "action": {
+        "name": "flag_regression",
+        "contextPath": "/diff/button_primary"
+      }
+    },
+    {
+      "id": "re_render_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Re-Capture Playwright Snapshot"
+      },
+      "action": {
+        "name": "recapture_snapshot",
+        "contextPath": "/diff/button_primary"
+      }
+    },
+    {
+      "id": "asset_matrix_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "matrix_title",
+          "matrix_desc",
+          "item_row_1",
+          "divider_1",
+          "item_row_2",
+          "divider_2",
+          "item_row_3",
+          "divider_3",
+          "item_row_4"
+        ]
+      }
+    },
+    {
+      "id": "matrix_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Component Visual Matrix"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "matrix_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Tracked snapshots, resolution coverage, and asset optimization across FSDS components."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "item_row_1",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "comp_1_info",
+          "comp_1_status",
+          "comp_1_action"
+        ]
+      }
+    },
+    {
+      "id": "comp_1_info",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_1_name",
+          "comp_1_meta"
+        ]
+      }
+    },
+    {
+      "id": "comp_1_name",
+      "component": "Text",
+      "text": {
+        "literalString": "DataGrid Enterprise \u00b7 @fsds/data-grid"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "comp_1_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "48 snapshots \u00b7 Light, Dark, High-Contrast \u00b7 Viewports: Mobile, Tablet, Desktop (2560px)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_1_status",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_1_badge",
+          "comp_1_size"
+        ]
+      }
+    },
+    {
+      "id": "comp_1_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udfe1 2 Outdated Hashes"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_1_size",
+      "component": "Text",
+      "text": {
+        "literalString": "WebP (42.1 KB) \u00b7 1.4x optimization"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_1_action",
+      "component": "Button",
+      "text": {
+        "literalString": "Audit Snapshots"
+      },
+      "action": {
+        "name": "audit_component",
+        "contextPath": "/components/datagrid"
+      }
+    },
+    {
+      "id": "divider_1",
+      "component": "Divider"
+    },
+    {
+      "id": "item_row_2",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "comp_2_info",
+          "comp_2_status",
+          "comp_2_action"
+        ]
+      }
+    },
+    {
+      "id": "comp_2_info",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_2_name",
+          "comp_2_meta"
+        ]
+      }
+    },
+    {
+      "id": "comp_2_name",
+      "component": "Text",
+      "text": {
+        "literalString": "Combobox & Multi-Select \u00b7 @fsds/inputs"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "comp_2_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "24 snapshots \u00b7 Light, Dark \u00b7 Missing: High-Contrast Accessible Snapshot"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_2_status",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_2_badge",
+          "comp_2_size"
+        ]
+      }
+    },
+    {
+      "id": "comp_2_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udd34 Missing Snapshot"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_2_size",
+      "component": "Text",
+      "text": {
+        "literalString": "PNG (78.3 KB) \u00b7 Needs WebP Conversion"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_2_action",
+      "component": "Button",
+      "text": {
+        "literalString": "Capture Missing"
+      },
+      "action": {
+        "name": "capture_snapshot",
+        "contextPath": "/components/combobox"
+      }
+    },
+    {
+      "id": "divider_2",
+      "component": "Divider"
+    },
+    {
+      "id": "item_row_3",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "comp_3_info",
+          "comp_3_status",
+          "comp_3_action"
+        ]
+      }
+    },
+    {
+      "id": "comp_3_info",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_3_name",
+          "comp_3_meta"
+        ]
+      }
+    },
+    {
+      "id": "comp_3_name",
+      "component": "Text",
+      "text": {
+        "literalString": "Modal Dialog & Drawer \u00b7 @fsds/react-core"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "comp_3_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "32 snapshots \u00b7 All themes, standard breakpoints, RTL support verified"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_3_status",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_3_badge",
+          "comp_3_size"
+        ]
+      }
+    },
+    {
+      "id": "comp_3_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udfe2 100% Healthy"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_3_size",
+      "component": "Text",
+      "text": {
+        "literalString": "AVIF/WebP (19.4 KB) \u00b7 Fully Compressed"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_3_action",
+      "component": "Button",
+      "text": {
+        "literalString": "View Gallery"
+      },
+      "action": {
+        "name": "view_gallery",
+        "contextPath": "/components/modal"
+      }
+    },
+    {
+      "id": "divider_3",
+      "component": "Divider"
+    },
+    {
+      "id": "item_row_4",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "comp_4_info",
+          "comp_4_status",
+          "comp_4_action"
+        ]
+      }
+    },
+    {
+      "id": "comp_4_info",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_4_name",
+          "comp_4_meta"
+        ]
+      }
+    },
+    {
+      "id": "comp_4_name",
+      "component": "Text",
+      "text": {
+        "literalString": "Mega Navigation & Breadcrumb \u00b7 @fsds/navigation"
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "comp_4_meta",
+      "component": "Text",
+      "text": {
+        "literalString": "18 snapshots \u00b7 Responsive breakpoints (320px to 1920px)"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_4_status",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "comp_4_badge",
+          "comp_4_size"
+        ]
+      }
+    },
+    {
+      "id": "comp_4_badge",
+      "component": "Text",
+      "text": {
+        "literalString": "\ud83d\udfe2 100% Healthy"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_4_size",
+      "component": "Text",
+      "text": {
+        "literalString": "WebP (14.2 KB) \u00b7 Verified v4.18.0"
+      },
+      "usageHint": "caption"
+    },
+    {
+      "id": "comp_4_action",
+      "component": "Button",
+      "text": {
+        "literalString": "View Gallery"
+      },
+      "action": {
+        "name": "view_gallery",
+        "contextPath": "/components/navigation"
+      }
+    },
+    {
+      "id": "export_actions_card",
+      "component": "Card",
+      "children": {
+        "explicitList": [
+          "exporter_title",
+          "exporter_desc",
+          "export_format_picker",
+          "cdn_snippet_field",
+          "exporter_buttons_row"
+        ]
+      }
+    },
+    {
+      "id": "exporter_title",
+      "component": "Text",
+      "text": {
+        "literalString": "Snapshot Manager & CDN Snippet Exporter"
+      },
+      "usageHint": "h2"
+    },
+    {
+      "id": "exporter_desc",
+      "component": "Text",
+      "text": {
+        "literalString": "Directly export verified image tokens, documentation URLs, and Storybook static preview anchors into your docs or Figma inspect plugins."
+      },
+      "usageHint": "body"
+    },
+    {
+      "id": "export_format_picker",
+      "component": "ChoicePicker",
+      "label": {
+        "literalString": "Export Target Format"
+      },
+      "value": {
+        "path": "/exporter/target_format"
+      },
+      "options": [
+        {
+          "label": "FSDS CDN WebP URI",
+          "value": "cdn_webp"
+        },
+        {
+          "label": "Figma Asset Token Link",
+          "value": "figma_token"
+        },
+        {
+          "label": "Storybook Static Preview Embed",
+          "value": "storybook_embed"
+        },
+        {
+          "label": "Markdown Image Tag",
+          "value": "markdown_tag"
+        }
+      ]
+    },
+    {
+      "id": "cdn_snippet_field",
+      "component": "TextField",
+      "label": {
+        "literalString": "Generated Asset Snippet / CDN Endpoint"
+      },
+      "value": {
+        "path": "/exporter/generated_snippet"
+      },
+      "placeholder": "https://cdn.fsds.design/assets/v4.18.0/react-core/button-primary-light@2x.webp"
+    },
+    {
+      "id": "exporter_buttons_row",
+      "component": "Row",
+      "children": {
+        "explicitList": [
+          "copy_snippet_btn",
+          "download_manifest_btn",
+          "purge_cache_btn"
+        ]
+      }
+    },
+    {
+      "id": "copy_snippet_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Copy Snippet to Clipboard"
+      },
+      "action": {
+        "name": "copy_snippet",
+        "contextPath": "/exporter"
+      }
+    },
+    {
+      "id": "download_manifest_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Download Asset Manifest (JSON)"
+      },
+      "action": {
+        "name": "download_manifest",
+        "contextPath": "/exporter"
+      }
+    },
+    {
+      "id": "purge_cache_btn",
+      "component": "Button",
+      "text": {
+        "literalString": "Purge Edge CDN Cache"
+      },
+      "action": {
+        "name": "purge_cdn_cache",
+        "contextPath": "/exporter"
+      }
+    }
+  ],
+  "data": {
+    "governance": {
+      "last_sync": "2025-02-23T14:32:00Z",
+      "build_id": "fsds-core-4180-ci"
+    },
+    "filters": {
+      "selected_package": "all",
+      "selected_theme": "both",
+      "selected_status": "all",
+      "search_query": ""
+    },
+    "diff": {
+      "slider_position": 50,
+      "component_id": "button_primary",
+      "baseline_version": "v4.17.2",
+      "candidate_version": "v4.18.0"
+    },
+    "exporter": {
+      "target_format": "cdn_webp",
+      "generated_snippet": "https://cdn.fsds.design/assets/v4.18.0/react-core/button-primary-light@2x.webp"
+    }
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I can help you build an interactive web app. What kind of application would you like to create?"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what I plan to build for **FSDS AssetTracker**:\n\nWe will build a visual image and asset tracking hub for your FSDS component library to audit visual coverage, inspect variant previews, and manage component imagery. It streamlines design system governance with real-time asset health metrics and interactive visual diffs.\n\n**Key features:**\n\u2022 Component Visual Matrix: Interactive gallery showcasing component snapshots across light, dark, and responsive breakpoints with resolution status tags\n\u2022 Asset Health & Coverage Dashboard: Real-time audit gauges highlighting missing thumbnails, outdated screenshots, and unoptimized asset files\n\u2022 Side-by-Side Version Diff: Comparison slider tool allowing designers and developers to review visual changes between component releases\n\u2022 Snapshot Manager & Snippet Exporter: Modal tool to upload component preview renders and instantly export code snippets and CDN URLs\n\nPlease review the plan below and tap **Confirm & Build App** when ready!"
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: Confirmed Plan for 'FSDS AssetTracker': We will build a visual image and asset tracking hub for your FSDS component library to audit visual coverage, inspect variant previews, and manage component imagery. It streamlines design system governance with real-time asset health metrics and interactive visual diffs.\n- q_main_features: build fsds image tracker for component library]"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is FSDS AssetTracker, a design system visual hub and image tracking suite. It features real-time visual coverage metrics, component snapshot audits, side-by-side release diff comparison, and exportable CDN token snippets."
+    }
+  ]
+}

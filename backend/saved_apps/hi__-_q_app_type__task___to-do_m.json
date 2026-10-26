@@ -1,0 +1,91 @@
+{
+  "id": "hi__-_q_app_type__task___to-do_m",
+  "name": "Hi (- Q_App_Type: Task_/_To-Do_M",
+  "updated_at": "2026-10-23T08:40:43.375113",
+  "component_count": 1,
+  "components": [
+    {
+      "id": "root_col",
+      "component": "Column",
+      "children": {
+        "explicitList": [
+          "{'id': 'header_card', 'component': 'Card', 'children': [{'id': 'title_text', 'component': 'Text', 'text': 'TaskFlow Pro', 'usageHint': 'h1'}, {'id': 'subtitle_text', 'component': 'Text', 'text': 'Organize your workflow, set priorities, and track your daily momentum.', 'usageHint': 'caption'}]}",
+          "{'id': 'stats_row', 'component': 'Row', 'children': [{'id': 'stat_card_1', 'component': 'Card', 'children': [{'id': 'stat_1_val', 'component': 'Text', 'text': '4 Tasks', 'usageHint': 'h2'}, {'id': 'stat_1_lbl', 'component': 'Text', 'text': 'Total Workload', 'usageHint': 'caption'}]}, {'id': 'stat_2_card', 'component': 'Card', 'children': [{'id': 'stat_2_val', 'component': 'Text', 'text': '2 High', 'usageHint': 'h2'}, {'id': 'stat_2_lbl', 'component': 'Text', 'text': 'Urgent Priority', 'usageHint': 'caption'}]}, {'id': 'stat_3_card', 'component': 'Card', 'children': [{'id': 'stat_3_val', 'component': 'Text', 'text': '3.5 hrs', 'usageHint': 'h2'}, {'id': 'stat_3_lbl', 'component': 'Text', 'text': 'Est. Focus Time', 'usageHint': 'caption'}]}]}",
+          "{'id': 'new_task_card', 'component': 'Card', 'children': [{'id': 'new_task_heading', 'component': 'Text', 'text': 'Create New Task', 'usageHint': 'h2'}, {'id': 'new_task_title_field', 'component': 'TextField', 'label': 'Task Description', 'placeholder': 'What needs to be done?', 'value': {'path': '/newTask/title'}}, {'id': 'selectors_row', 'component': 'Row', 'children': [{'id': 'new_task_category_picker', 'component': 'ChoicePicker', 'label': 'Category', 'options': [{'label': 'Work', 'value': 'Work'}, {'label': 'Personal', 'value': 'Personal'}, {'label': 'Engineering', 'value': 'Engineering'}, {'label': 'Admin', 'value': 'Admin'}], 'value': {'path': '/newTask/category'}}, {'id': 'new_task_priority_picker', 'component': 'ChoicePicker', 'label': 'Priority', 'options': [{'label': 'High', 'value': 'High'}, {'label': 'Medium', 'value': 'Medium'}, {'label': 'Low', 'value': 'Low'}], 'value': {'path': '/newTask/priority'}}]}, {'id': 'duration_slider', 'component': 'Slider', 'label': 'Estimated Duration (Minutes)', 'min': 15, 'max': 180, 'value': {'path': '/newTask/estimatedMinutes'}}, {'id': 'add_task_btn', 'component': 'Button', 'text': 'Add Task to List', 'action': {'name': 'add_task', 'contextPath': '/newTask'}}]}",
+          "{'id': 'filter_row', 'component': 'Row', 'children': [{'id': 'filter_picker', 'component': 'ChoicePicker', 'label': 'Filter by Status', 'options': [{'label': 'All Tasks', 'value': 'all'}, {'label': 'Active', 'value': 'active'}, {'label': 'Completed', 'value': 'completed'}], 'value': {'path': '/filterStatus'}}, {'id': 'search_field', 'component': 'TextField', 'label': 'Search Tasks', 'placeholder': 'Keyword...', 'value': {'path': '/searchQuery'}}]}",
+          "{'id': 'tasks_heading', 'component': 'Text', 'text': 'Current Tasks', 'usageHint': 'h2'}",
+          "{'id': 'task_card_1', 'component': 'Card', 'children': [{'id': 'task_1_header_row', 'component': 'Row', 'children': [{'id': 'task_1_title', 'component': 'Text', 'text': 'Finalize Q3 Budget and Expense Forecast', 'usageHint': 'body'}, {'id': 'task_1_priority', 'component': 'Text', 'text': 'Priority: High', 'usageHint': 'caption'}]}, {'id': 'task_1_meta_row', 'component': 'Row', 'children': [{'id': 'task_1_category', 'component': 'Text', 'text': 'Work \u2022 90 min', 'usageHint': 'caption'}, {'id': 'task_1_status', 'component': 'Text', 'text': 'Status: In Progress', 'usageHint': 'caption'}]}, {'id': 'task_1_actions_row', 'component': 'Row', 'children': [{'id': 'task_1_complete_btn', 'component': 'Button', 'text': 'Mark Done', 'action': {'name': 'complete_task', 'contextPath': '/tasks/task1'}}, {'id': 'task_1_delete_btn', 'component': 'Button', 'text': 'Remove', 'action': {'name': 'delete_task', 'contextPath': '/tasks/task1'}}]}]}",
+          "{'id': 'task_card_2', 'component': 'Card', 'children': [{'id': 'task_2_header_row', 'component': 'Row', 'children': [{'id': 'task_2_title', 'component': 'Text', 'text': 'Refactor API Auth Middleware & Token Rotation', 'usageHint': 'body'}, {'id': 'task_2_priority', 'component': 'Text', 'text': 'Priority: High', 'usageHint': 'caption'}]}, {'id': 'task_2_meta_row', 'component': 'Row', 'children': [{'id': 'task_2_category', 'component': 'Text', 'text': 'Engineering \u2022 60 min', 'usageHint': 'caption'}, {'id': 'task_2_status', 'component': 'Text', 'text': 'Status: In Progress', 'usageHint': 'caption'}]}, {'id': 'task_2_actions_row', 'component': 'Row', 'children': [{'id': 'task_2_complete_btn', 'component': 'Button', 'text': 'Mark Done', 'action': {'name': 'complete_task', 'contextPath': '/tasks/task2'}}, {'id': 'task_2_delete_btn', 'component': 'Button', 'text': 'Remove', 'action': {'name': 'delete_task', 'contextPath': '/tasks/task2'}}]}]}",
+          "{'id': 'task_card_3', 'component': 'Card', 'children': [{'id': 'task_3_header_row', 'component': 'Row', 'children': [{'id': 'task_3_title', 'component': 'Text', 'text': 'Doctor Appointment & Medical Records Pickup', 'usageHint': 'body'}, {'id': 'task_3_priority', 'component': 'Text', 'text': 'Priority: Medium', 'usageHint': 'caption'}]}, {'id': 'task_3_meta_row', 'component': 'Row', 'children': [{'id': 'task_3_category', 'component': 'Text', 'text': 'Personal \u2022 45 min', 'usageHint': 'caption'}, {'id': 'task_3_status', 'component': 'Text', 'text': 'Status: In Progress', 'usageHint': 'caption'}]}, {'id': 'task_3_actions_row', 'component': 'Row', 'children': [{'id': 'task_3_complete_btn', 'component': 'Button', 'text': 'Mark Done', 'action': {'name': 'complete_task', 'contextPath': '/tasks/task3'}}, {'id': 'task_3_delete_btn', 'component': 'Button', 'text': 'Remove', 'action': {'name': 'delete_task', 'contextPath': '/tasks/task3'}}]}]}",
+          "{'id': 'task_card_4', 'component': 'Card', 'children': [{'id': 'task_4_header_row', 'component': 'Row', 'children': [{'id': 'task_4_title', 'component': 'Text', 'text': 'Team Weekly Standup Notes & Retrospective Summary', 'usageHint': 'body'}, {'id': 'task_4_priority', 'component': 'Text', 'text': 'Priority: Low', 'usageHint': 'caption'}]}, {'id': 'task_4_meta_row', 'component': 'Row', 'children': [{'id': 'task_4_category', 'component': 'Text', 'text': 'Admin \u2022 15 min', 'usageHint': 'caption'}, {'id': 'task_4_status', 'component': 'Text', 'text': 'Status: Completed', 'usageHint': 'caption'}]}, {'id': 'task_4_actions_row', 'component': 'Row', 'children': [{'id': 'task_4_reopen_btn', 'component': 'Button', 'text': 'Reopen Task', 'action': {'name': 'reopen_task', 'contextPath': '/tasks/task4'}}, {'id': 'task_4_delete_btn', 'component': 'Button', 'text': 'Remove', 'action': {'name': 'delete_task', 'contextPath': '/tasks/task4'}}]}]}"
+        ]
+      }
+    }
+  ],
+  "data": {
+    "filterStatus": "all",
+    "searchQuery": "",
+    "newTask": {
+      "title": "",
+      "category": "Work",
+      "priority": "High",
+      "estimatedMinutes": 45
+    },
+    "tasks": {
+      "task1": {
+        "title": "Finalize Q3 Budget and Expense Forecast",
+        "category": "Work",
+        "priority": "High",
+        "estimatedMinutes": 90,
+        "completed": false
+      },
+      "task2": {
+        "title": "Refactor API Auth Middleware & Token Rotation",
+        "category": "Engineering",
+        "priority": "High",
+        "estimatedMinutes": 60,
+        "completed": false
+      },
+      "task3": {
+        "title": "Doctor Appointment & Medical Records Pickup",
+        "category": "Personal",
+        "priority": "Medium",
+        "estimatedMinutes": 45,
+        "completed": false
+      },
+      "task4": {
+        "title": "Team Weekly Standup Notes & Retrospective Summary",
+        "category": "Admin",
+        "priority": "Low",
+        "estimatedMinutes": 15,
+        "completed": true
+      }
+    }
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm ready to build an application for you. Please let me know what kind of app you have in mind."
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: task_/_to-do_manager]"
+    },
+    {
+      "role": "assistant",
+      "content": "I have created TaskFlow, a comprehensive task and to-do management application. It features quick task entry with priority, category, and estimated time sliders, along with dynamic summary stats and an organized task list."
+    },
+    {
+      "role": "user",
+      "content": "[Clarification answers: - q_app_type: task_/_to-do_manager]"
+    },
+    {
+      "role": "assistant",
+      "content": "I've created TaskFlow, an interactive task and to-do management application. You can quickly add new tasks with specific priorities, categories, and estimated durations, filter and inspect your workload, and track completion progress with dashboard metrics."
+    }
+  ]
+}
